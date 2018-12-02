@@ -1,40 +1,111 @@
 <!DOCTYPE html>
 <html><head><title>Yefim Shneyderman</title>
 <link rel="icon" href="yshneyderman.github.io/Icon.png">
+    <!DOCTYPE html>
+    <head>
+        <title>Page Title</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            /* Style the body */
+            body {
+                font-family: Ubuntu;
+                margin: 0;
+            }
+
+            /* Header/logo Title */
+            .header {
+                padding: 60px;
+                text-align: center;
+                background: #000000;
+                color: #33FF00;
+            }
+
+            /* Column container */
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            /* Create two unequal columns that sits next to each other */
+            /* Sidebar/left column */
+            .side {
+                flex: 30%;
+                background-color: #f1f1f1;
+                padding: 20px;
+            }
+
+            /* Main column */
+            .main {
+                flex: 70%;
+                background-color: white;
+                padding: 20px;
+            }
+
+            /* Fake image, just for this example */
+            .fakeimg {
+                background-color: #aaa;
+                width: 100%;
+                padding: 20px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                background: #ddd;
+            }
+
+            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 700px) {
+                .row, .navbar {
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+<body>
+
+
+<!-- Header -->
+<div class="header">
+    <p>>_Hello World! My name is </p>
+    <h style="font-size: 200%;">YEFIM SHNEYDERMAN</h>
+</div>
+
 <style>
-body {margin:0;}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-li {
-    float: right;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #757575;
-}
-</style></head><body>
+    body {margin:0;}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    li {
+        float: right;
+    }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+    .active {
+        background-color: #757575;
+    }
+</style>
+</head>
+<body>
 
 <ul>
   <li style="font-family: ubuntu;"><a class="active" href="https://yshneyderman.github.io/">Home</a></li>
@@ -42,60 +113,49 @@ li a:hover:not(.active) {
   <li style="font-family: ubuntu;"><a href="yshneyderman.github.io/resume.html">Resume</a></li>
 </ul>
 
-<div style="padding: 40px; margin-top: 30px; background-color: rgb(255, 255, 255); height: 1500px;">
-<h1 style="font-family: ubuntu; font-size: 100%;">Hello World! My name is</h1>
-<h1 style="font-family: ubuntu; font-size: 300%;">YEFIM <font color ="black"> SHNEYDERMAN</h1>
-<h1 style="font-family: ubuntu; font-size: 100%;"> <font color ="black">I'm a sophomore Computer Science and Mathematics Major at the University of Massachusetts Amherst</h1>
-<p id="C4" style="font-family: ubuntu; font-size: 100%;">As a student I am mostly interested in learning about cybersecurity, UX/UI, and software engineering as they each envelop certain elements that I enjoy working with and feel are important fields to be a part of. </p>
-<p style="font-family: ubuntu; font-size: 100%;">I am also greatly interested in gamification and how it can solve problems as well as create incentive for use of programs.</p>
-<p style="font-family: ubuntu; font-size: 100%;"><br></p>
-<p style="font-family: ubuntu; font-size: 100%; font-weight: bold;">Projects</p>
-<p style="font-family: ubuntu; font-size: 100%;">Here are some of the things I'm working on:<br>
-</p>
-<br>
-<p style="font-family: ubuntu; font-size: 100%; margin-left: 160px;"><img style="width: 374px; height: 215px;" alt="HackUmassGUI" src="HackUmassVI.png">&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp; <img style="width: 374px; height: 215px;" alt="HackCornellCodeAndGUI" src="HackCornell.png"><br>
-</p>
-<p style="font-family: ubuntu; font-size: 100%; margin-left: 160px;"><span style="font-weight: bold;">Hack Umass VI - <span style="font-style: italic;">October 2018</span>&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; Hack Cornell 2018 - <span style="font-style: italic;">October 2018</span></span><br>
-</p>
-<p style="font-family: ubuntu; font-size: 100%; margin-left: 160px;"><span style="font-style: italic;">WIP
-- Attempted to design a remote lightswitch&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; WIP - Designed simple matchmaking
-algorithm and</span><br style="font-style: italic;">
-<span style="font-style: italic;">and curtain opener with desktop
-application.&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; GUI based on calculated MMR.</span><br>
-</p>
+<div style="padding: 40px; margin-top: 0px; background-color: rgb(255, 255, 255); height: 1500px;">
+    <p style="font-family: ubuntu; font-size: 100%;"><b>>_About Me</b>
+    <p style="font-family: ubuntu; font-size: 100%;">I'm a sophomore Computer Science and Mathematics Major at the University of Massachusetts Amherst.
+    <p id="C4" style="font-family: ubuntu; font-size: 100%;">As a student I am mostly interested in learning about cybersecurity, UX/UI, and software engineering as they each envelop certain elements that I enjoy working with and feel are important fields to be a part of. </p>
+    <p style="font-family: ubuntu; font-size: 100%;">I am also greatly interested in gamification and how it can solve problems as well as create incentive for use of programs.</p>
+    <p><br></p>
+    <p style="font-family: ubuntu; font-size: 100%; font-weight: bold;">>_Projects</p>
+    <p style="font-family: ubuntu; font-size: 100%;">Here are some of the things I'm working on:<br>
+    <p>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .row {
+                display: flex;
+            }
+            /* Create three equal columns that sits next to each other */
+            .column {
+                flex: 33.33%;
+                padding: 10px;
+            }
+        </style>
+    <div class="row">
+        <div class="column">
+            <img style="width: 374px; height: 215px;" alt="HackUmassGUI" src="HackUmassVI.png"><br>
+            <p>WIP - Attempted to design a remote lightswitch and curtain opener with desktop application.</p>
+        </div>
+        <div class="column">
+            <img style="width: 374px; height: 215px;" alt="HackCornellCodeAndGUI" src="HackCornell.png"><br>
+            <p>WIP - Designed simple matchmaking algorithm and GUI based on calculated MMR.</p>
+        </div>
+    <div class="column">
+        <img style="width: 374px; height: 215px;" alt="HackCornellCodeAndGUI" src="HackCornell.png"><br>
+        <p>WIP - Designed simple matchmaking algorithm and GUI based on calculated MMR.</p>
+    </div>
+    </div>
+    </p>
 </div>
 
-</body></html>
+<!--Footer-->
+<div class="footer">
+    <h2>Footer</h2>
+</div>
+
+</body>
+</html>
