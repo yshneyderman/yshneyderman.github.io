@@ -70,18 +70,65 @@
 
 
 <!-- Header -->
-<div class="header">
+<div class="header" id="#top">
     <p>>_Hello World! My name is </p>
     <h style="font-size: 200%;">YEFIM SHNEYDERMAN</h>
 </div>
 
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    * {box-sizing: border-box}
+    body {font-family: Ubuntu;}
+
+    .navbar {
+        width: 100%;
+        background-color: #555;
+        overflow: auto;
+    }
+
+    .navbar a {
+        float: left;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        width: 33.33%; /* Three links of equal widths */
+        text-align: center;
+    }
+
+    .navbar a:hover {
+        background-color: #333;
+    }
+
+    .navbar a.active {
+        background-color: #4CAF50;
+    }
+
+    @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+    }
+</style>
+<div class="navbar">
+    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="mailto:yshneyderman@umass.edu"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="https://github.com/yshneyderman/yshneyderman.github.io/raw/master/Yefim%20Shneyderman%20Resume.pdf"><i class="fa fa-file-text-o"></i> Download Resume</a>
+</div>
+
 <div style="padding: 40px; margin-top: 0px; background-color: rgb(255, 255, 255); height: 1500px;">
-    <p style="font-family: ubuntu; font-size: 100%;"><b>>_About Me</b>
+    <p style="font-family: ubuntu; font-size: 140%;"><b>>_About Me</b>
     <p style="font-family: ubuntu; font-size: 100%;">I'm a sophomore Computer Science and Mathematics Major at the University of Massachusetts Amherst.
     <p id="C4" style="font-family: ubuntu; font-size: 100%;">As a student I am mostly interested in learning about cybersecurity, UX/UI, and software engineering as they each envelop certain elements that I enjoy working with and feel are important fields to be a part of. </p>
     <p style="font-family: ubuntu; font-size: 100%;">I am also greatly interested in gamification and how it can solve problems as well as create incentive for use of programs.</p>
+    <p style="font-family: ubuntu; font-size: 100%;">In my free time I like painting, reading, swimming, badminton, and watching my favorite movies. </p>
     <p><br></p>
-    <p style="font-family: ubuntu; font-size: 100%; font-weight: bold;">>_Projects</p>
+    <p style="font-family: ubuntu; font-size: 140%; font-weight: bold;">>_Projects</p>
     <p style="font-family: ubuntu; font-size: 100%;">Here are some of the things I'm working on:<br>
     <p>
         <style>
@@ -90,6 +137,7 @@
             }
             .row {
                 display: flex;
+                padding: 10px;
             }
             /* Create three equal columns that sits next to each other */
             .column {
@@ -104,25 +152,38 @@
         <div class="column">
             <img style="width: 374px; height: 215px;" alt="HackUmassGUI" src="HackUmassVI.png"><br>
             <p><b>Hack Umass VI</b></p>
-            <p>WIP - Worked with a team to design a remote lightswitch and curtain opener with desktop application.</p>
+            <p>Worked with a team to design a remote lightswitch and curtain opener with desktop application</p>
         </div>
         <div class="column">
             <img style="width: 374px; height: 215px;" alt="HackCornellCodeAndGUI" src="HackCornell.png"><br>
             <p><b>Hack Cornell 2018</b></p>
-            <p>WIP - Designed simple matchmaking algorithm and GUI based on calculated MMR.</p>
+            <p>WIP - Designing simple matchmaking algorithm and GUI based on calculated MMR</p>
         </div>
-    <div class="column">
-        <img style="width: 374px; height: 215px;" alt="PenteBoardAndGUI" src="Pente.png"><br>
-        <p><b>Pente</b></p>
-        <p>WIP - Collaborating on back-end for a web browser pente game</p>
+        <div class="column">
+            <img style="width: 374px; height: 215px;" alt="PenteBoardAndGUI" src="Pente.png"><br>
+            <p><b>Pente</b></p>
+            <p>WIP - Collaborating on back-end for a web browser pente game</p>
+        </div>
     </div>
+    <div class="row">
+        <div class="column">
+            <img style="width: 374px; height: 215px;" alt="RPGChess" src="RPGChess.png"><br>
+            <p><b>RPG Chess</b></p>
+            <p>WIP - Working on a turn based combat game with a 12x22 board in java</p>
+        </div>
+        <div class="column">
+
+        </div>
+        <div class="column">
+
+        </div>
     </div>
     </p>
 </div>
 
 <!--Footer-->
 <div class="footer">
-    <h2>Footer</h2>
+    <h2><a href="#top">Back to Top</a></h2>
 </div>
 
 </body>
