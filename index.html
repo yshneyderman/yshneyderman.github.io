@@ -59,13 +59,6 @@
 		        padding: 20px;
 		    }
 
-		    /* Footer */
-		    .footer {
-		        padding: 10px;
-		        text-align: center;
-		        background: #ddd;
-		    }
-
 		    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 		    @media screen and (max-width: 700px) {
 		        .row, .navbar {
@@ -115,6 +108,23 @@
 		        }
 		    }
 		</style>
+		<style>
+				* {
+						box-sizing: border-box;
+				}
+				.row {
+						display: flex;
+						padding: 10px;
+				}
+				/* Create three equal columns that sits next to each other */
+				.column {
+						flex: 33.33%;
+						padding: 10px;
+						border-color: black;
+						border-bottom-style: solid;
+						border-width: 0px;
+				}
+		</style>
 		<div class="navbar">
 		    <a href="https://github.com/yshneyderman"><i class="fa fa-fw fa-github"></i> My GitHub  </a>
 		    <a href="https://www.linkedin.com/in/yshneyderman/"><i class="fa fa-linkedin-square"></i> My LinkedIn  </a>
@@ -122,7 +132,8 @@
 		    <a href="https://github.com/yshneyderman/yshneyderman.github.io/raw/master/Yefim%20Shneyderman%20Resume.pdf"><i class="fa fa-file-text-o"></i> Download Resume  </a>
 		</div>
 
-		<div style="padding: 40px; margin-top: 0px; background-color: rgb(255, 255, 255); height: 2700px;">
+		<div style="padding: 40px; margin-top: 0px; background-color: rgb(255, 255, 255); height: 3200px;">
+
 		    <p style="font-family: Calibri; font-size: 140%;"><b>>_About Me</b>
 		    <p style="font-family: Calibri; font-size: 100%;">I'm a sophomore Computer Science and Mathematics Major at the University of Massachusetts Amherst.
 		    <p>As a student I am mostly interested in learning about UX/UI, cybersecurity, and software engineering as they each envelop certain elements that I enjoy working with and feel are important fields to be a part of. </p>
@@ -130,26 +141,30 @@
 		    <p>In my free time I like painting, reading, swimming, badminton, and watching my favorite movies. </p>
 		    <br>
 		    <hr style="border: 1.5px solid black;">
+
+				<p style="font-family: Calibri; font-size: 140%;"><b>>_Skills</b>
+				<!-- skills row-->
+				<p style="font-family: Calibri; font-size: 100%;"><b>Programming</b></p>
+				<p></p>
+				<p>&emsp;• Experience programming with Java (advanced), JavaScript (intermediate), C (intermediate), Python (beginner)</p>
+				<p><b>Videography & Design</b></p>
+				<p></p>
+				<p>&emsp;• Advanced: Premiere Pro, Final Cut Pro X (Video Editing), Photoshop (Graphic Design), Microsoft Office Suite</p>
+				<p>&emsp;• Intermediate: Illustrator (Graphic Design), After Effects (Visual Effects and Animation), HTML (Web Design)</p>
+				<p>&emsp;• Beginner: InDesign (Page Design), XD (UX/UI Design), Audition (Audio)</p>
+				<p><b>Language</b></p>
+				<p></p>
+				<p>&emsp;• Basic skills/experience in Russian and French</p>
+				<p><b>Coursework</b></p>
+				<p></p>
+				<p>&emsp;• Computer Science: Introduction to Problem Solving with Computers, Programming with Data Structures, Introduction to Computation, Programming Methodology, Computer Systems Principles, Reasoning Under Uncertainty</p>
+				<p>&emsp;• Mathematics: Calculus (I, II, and III), Physics I & II, Introduction to Linear Algebra, Statistics I, Differential Equations</p>
+				<br>
+				<hr style="border: 1.5px solid black;">
+
 		    <p style="font-family: Calibri; font-size: 140%; font-weight: bold;">>_Projects</p>
 		    <p style="font-family: Calibri; font-size: 100%;">Here are some of the things I'm working on:<br>
-		    <p>
-	        <style>
-	            * {
-	                box-sizing: border-box;
-	            }
-	            .row {
-	                display: flex;
-	                padding: 10px;
-	            }
-	            /* Create three equal columns that sits next to each other */
-	            .column {
-	                flex: 33.33%;
-	                padding: 10px;
-	                border-color: black;
-	                border-bottom-style: solid;
-	                border-width: 0px;
-	            }
-	        </style>
+
 		    <div class="row">
 		        <div class="column">
 		            <img style="width: 374px; height: 215px;" alt="HackUmassGUI" src="HackUmassVI.png"><br>
@@ -206,8 +221,8 @@
 						<div class="column">
 		            <img style="width: 374px; height: 215px;" alt="RPGChess" src="RPGChess.png"><br>
 		            <p><b>RPG Chess</b></p>
-		            <p>Working on a long term project of a turn based combat game with a 12x16 board in Java. Now features 15 playable pieces and option to select 5 pieces for a team</p>
-		            <p>Status: Adding abilitiy and move rules. Expanding amount of pieces and working on new creative ability types and interactions. Looking for a new name for the game.</p>
+		            <p>Working on an individual long term project of a turn based combat game with a 12x16 board in Java. Now features 15 playable pieces and option to select 10 pieces for a team</p>
+		            <p>Status: Expanding amount of pieces and working on new creative ability types and interactions like summoning, AOE, DOT, protections, and various buffs. Looking for a new name for the game.</p>
 		        </div>
 		    </div>
 				<div class="row">
@@ -230,26 +245,23 @@
 							<p>Status: Completed</p>
 					</div>
 			 </div>
-		<hr style="border: 1.5px solid black;">
-		<p style="font-family: Calibri; font-size: 140%;"><b>>_Skills</b>
-		<!-- skills row-->
-		<p style="font-family: Calibri; font-size: 100%;"><b>Programming</b></p>
-		<p></p>
-		<p>&emsp;• Experience programming with Java (advanced), JavaScript (intermediate), C (intermediate), Python (beginner)</p>
-		<p><b>Videography & Design</b></p>
-		<p></p>
-		<p>&emsp;• Advanced: Premiere Pro, Final Cut Pro X (Video Editing), Photoshop (Graphic Design), Microsoft Office Suite</p>
-		<p>&emsp;• Intermediate: Illustrator (Graphic Design), After Effects (Visual Effects)</p>
-		<p>&emsp;• Beginner: InDesign (Page Design), XD (UX/UI Design), Audition (Audio)</p>
-		<p><b>Language</b></p>
-		<p></p>
-		<p>&emsp;• Basic skills/experience in Russian and French</p >
-		</div>
+			 <div class="row">
+					<div class="column">
+							<img style="width: 374px; height: 215px;" alt="Threads" src="Threads.png"><br>
+							<p><b>Threads and Synchronization</b></p>
+							<p>Project for CS230 to implement a program using threads and semaphores in C to simulate a ticket ordering call center with 5 lines and 3 operators so that any number of callers can call and wait until they connect to operator and buy a ticket.</p>
+							<p>Status: Completed</p>
+					</div>
+					<div class="column">
+						<img style="width: 374px; height: 215px;" alt="MathBot" src="MathBot.png"><br>
+						<p><b>Math Bot</b></p>
+						<p>Project for CS230 to write a computer networking client to connect to remote server in C and automatically answer a series of math problems by sending and recieving problems and solutions to the server until we are sent a flag that indicates the end of the program.</p>
+						<p>Status: Completed</p>
+					</div>
+					<div class="column">
 
-		<!-- Space -->
-		<div class="footer">
-		    <h2><a href="#top">Back to Top</a></h2>
-		    <p>Thanks for visiting!</p>
+				 </div>
+			</div>
 		</div>
 	</body>
 </html>
