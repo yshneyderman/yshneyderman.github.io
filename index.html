@@ -1,267 +1,575 @@
-﻿<!DOCTYPE html>
-<html>
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138135081-1"></script>
-		<script>
-	  	window.dataLayer = window.dataLayer || [];
-	  	function gtag(){dataLayer.push(arguments);}
-	  	gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<!--A giant mess of bootstrap starter template-->
+<head>
+    <link rel="icon" href="icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-	  	gtag('config', 'UA-138135081-1');
-		</script>
-		<title>Yefim Shneyderman</title>
-		<link rel="icon" href="yshneyderman.github.io/Icon.png">
-		<style>
-		    * {
-		        box-sizing: border-box;
-		    }
+  <title>Yefim Shneyderman</title>
 
-		    /* Style the body */
-		    body {
-		        font-family: Calibri;
-		        margin: 0;
-		    }
+  <!-- Custom fonts for this theme -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-		    /* Header/logo Title */
-		    .header {
-		        padding: 60px;
-		        text-align: center;
-		        background: #000000;
-		        color: #33FF00;
-		    }
+  <!-- Theme CSS -->
+  <link href="css/freelancer.min.css" rel="stylesheet">
 
-		    /* Column container */
-		    .row {
-		        display: flex;
-		        flex-wrap: wrap;
-		    }
+</head>
 
-		    /* Create two unequal columns that sits next to each other */
-		    /* Sidebar/left column */
-		    .side {
-		        flex: 30%;
-		        background-color: #f1f1f1;
-		        padding: 20px;
-		    }
+<body id="page-top">
 
-		    /* Main column */
-		    .main {
-		        flex: 70%;
-		        background-color: white;
-		        padding: 20px;
-		    }
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Yefim Shneyderman</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About Me</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#project">Projects</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://github.com/yshneyderman/yshneyderman.github.io/raw/master/Yefim%20Shneyderman%20Resume.pdf">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-		    /* Fake image, just for this example */
-		    .fakeimg {
-		        background-color: #aaa;
-		        width: 100%;
-		        padding: 20px;
-		    }
+  <!-- Masthead -->
+  <!--<header class="masthead bg-primary text-white text-center" style="background-image: url(matrix.gif)">-->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
 
-		    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-		    @media screen and (max-width: 700px) {
-		        .row, .navbar {
-		            flex-direction: column;
-		        }
-		    }
-		</style>
-	</head>
-	<body>
-		<!-- Header -->
-		<div class="header" id="#top">
-		    <p>>_Hello World! My name is </p>
-		    <h style="font-size: 200%;">YEFIM SHNEYDERMAN</h>
-		</div>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<style>
-		    * {box-sizing: border-box}
-		    body {font-family: Calibri;}
+      <!-- Masthead Avatar Image -->
+      <!--<img class="masthead-avatar mb-5" src="img/me.png" alt="">-->
+      <p class="masthead-subheading font-weight-light mb-0">Hello World! My name is</p><br>
+      <!-- Masthead Heading -->
+      <h1 class="masthead-heading text-uppercase mb-0">Yefim Shneyderman</h1>
 
-		    .navbar {
-		        width: 100%;
-		        background-color: #4CAF50;
-		        overflow: auto;
-		    }
+    </div>
+  </header>
 
-		    .navbar a {
-		        float: left;
-		        padding: 12px;
-		        color: white;
-		        text-decoration: none;
-		        font-size: 17px;
-		        width: 25%; /* Four links of equal widths */
-		        text-align: center;
-		    }
 
-		    .navbar a:hover {
-		        background-color: #368439;
-		    }
 
-		    @media screen and (max-width: 500px) {
-		        .navbar a {
-		            float: none;
-		            display: block;
-		            width: 100%;
-		            text-align: left;
-		        }
-		    }
-		</style>
-		<style>
-				* {
-						box-sizing: border-box;
-				}
-				.row {
-						display: flex;
-						padding: 10px;
-				}
-				/* Create three equal columns that sits next to each other */
-				.column {
-						flex: 33.33%;
-						padding: 10px;
-						border-color: black;
-						border-bottom-style: solid;
-						border-width: 0px;
-				}
-		</style>
-		<div class="navbar">
-		    <a href="https://github.com/yshneyderman"><i class="fa fa-fw fa-github"></i> My GitHub  </a>
-		    <a href="https://www.linkedin.com/in/yshneyderman/"><i class="fa fa-linkedin-square"></i> My LinkedIn  </a>
-		    <a href="mailto:yshneyderman@umass.edu"><i class="fa fa-fw fa-envelope"></i> Email Me  </a>
-		    <a href="https://github.com/yshneyderman/yshneyderman.github.io/raw/master/Yefim%20Shneyderman%20Resume.pdf"><i class="fa fa-file-text-o"></i> Download Resume  </a>
-		</div>
+  <!-- About Section -->
+  <section class="page-section portfolio" id="about">
+  <!--<section class="page-section bg-primary text-white mb-0" id="about">-->
+    <div class="container">
 
-		<div style="padding: 40px; margin-top: 0px; background-color: rgb(255, 255, 255); height: 3200px;">
+      <!-- About Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+      <!--<h2 class="page-section-heading text-center text-uppercase text-white">-->About Me</h2>
 
-		    <p style="font-family: Calibri; font-size: 140%;"><b>>_About Me</b>
-		    <p style="font-family: Calibri; font-size: 100%;">I'm a sophomore Computer Science and Mathematics Major at the University of Massachusetts Amherst.
-		    <p>As a student I am mostly interested in learning about UX/UI, cybersecurity, and software engineering as they each envelop certain elements that I enjoy working with and feel are important fields to be a part of. </p>
-		    <p>I am also greatly interested in gamification and how it can solve problems as well as create incentive for use of programs. I like using math and computer science to solve problems for the satisfaction of troubleshooting until things work out successfully and seeing something through to completion. </p>
-		    <p>In my free time I like painting, reading, swimming, badminton, and watching my favorite movies. </p>
-		    <br>
-		    <hr style="border: 1.5px solid black;">
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+      </div>
 
-				<p style="font-family: Calibri; font-size: 140%;"><b>>_Skills</b>
-				<!-- skills row-->
-				<p style="font-family: Calibri; font-size: 100%;"><b>Programming</b></p>
-				<p></p>
-				<p>&emsp;• Experience programming with Java (advanced), JavaScript (intermediate), C (intermediate), Python (beginner)</p>
-				<p><b>Videography & Design</b></p>
-				<p></p>
-				<p>&emsp;• Advanced: Premiere Pro, Final Cut Pro X (Video Editing), Photoshop (Graphic Design), Microsoft Office Suite</p>
-				<p>&emsp;• Intermediate: Illustrator (Graphic Design), After Effects (Visual Effects and Animation), HTML (Web Design)</p>
-				<p>&emsp;• Beginner: InDesign (Page Design), XD (UX/UI Design), Audition (Audio)</p>
-				<p><b>Language</b></p>
-				<p></p>
-				<p>&emsp;• Basic skills/experience in Russian and French</p>
-				<p><b>Coursework</b></p>
-				<p></p>
-				<p>&emsp;• Computer Science: Introduction to Problem Solving with Computers, Programming with Data Structures, Introduction to Computation, Programming Methodology, Computer Systems Principles, Reasoning Under Uncertainty</p>
-				<p>&emsp;• Mathematics: Calculus (I, II, and III), Physics I & II, Introduction to Linear Algebra, Statistics I, Differential Equations</p>
-				<br>
-				<hr style="border: 1.5px solid black;">
+      <!-- About Section Content -->
+      <div class="row">
+        <div class="col-lg-4 ml-auto" style="padding:8px">
+            <img class="masthead-avatar mb-5" src="rocks.png" align="center" width=380px alt="picture of me at glacier">
+            <p align="center">A morning hike while camping at Glacier National Park, MT - Summer 2019.</p>
+        </div>
+        <div class="col-lg-41 ml-auto" style="padding:8px">
+          <p class="lead">I'm a junior Computer Science and Mathematics Major at the University of Massachusetts Amherst.</p>
 
-		    <p style="font-family: Calibri; font-size: 140%; font-weight: bold;">>_Projects</p>
-		    <p style="font-family: Calibri; font-size: 100%;">Here are some of the things I'm working on:<br>
+            <p class="lead">As a student I am very passionate about learning and love using technology to solve problems around me.</p>
+            
+            <p class="lead">I'm very interested in learning about and working on UX/UI development, graphic design, security, software development, and artificial intelligence. I am looking for internships to help learn more useful skills and expand on my interests!</p>
+            
+            <p class="lead">In my free time I like coding, hiking, painting, listening to music, reading, swimming, badminton, and watching my favorite movies.</p>
+            <br>
+            <div class="row">
+            <!--<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+                <button class="btn btn-primary">
+                  <i class="fa fa-film"></i>
+                  Favorite Films
+                </button>
+            </div>
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+                <button class="btn btn-primary">
+                  <i class="fa fa-leaf"></i>
+                  Hiking Pictures
+                </button>
+            </div>
+            </div>
+          -->
+        </div>
+      </div>
+  </div>
+  </section>
 
-		    <div class="row">
-		        <div class="column">
-		            <img style="width: 374px; height: 215px;" alt="HackUmassGUI" src="HackUmassVI.png"><br>
-		            <p><b>Hack Umass VI</b></p>
-		            <p>Worked with a small team of computer science and computer engineering students to design a remote light switch and curtain opener with desktop application in Java to help make dorm life easier for UMass students. Led the development of the GUI and attempted to link the application over Bluetooth to a Raspberry Pi operating the motor</p>
-		            <p>Status: Project ended with end of event.</p>
-		        </div>
-		        <div class="column">
-		            <img style="width: 374px; height: 215px;" alt="HackCornellCodeAndGUI" src="HackCornell.png"><br>
-		            <p><b>Hack Cornell 2018</b></p>
-		            <p>Continuing old project started at Hack Cornell 2018. Designing simple matchmaking algorithms in Python based on calculated MMR, KDA, hours played, points scored, and other metrics</p>
-		            <p>Status: Restarted project with new ideas</p>
-		        </div>
-		        <div class="column">
-		            <img style="width: 374px; height: 215px;" alt="PenteBoardAndGUI" src="Pente.png"><br>
-		            <p><b>Pente</b></p>
-		            <p>Collaborating on a web browser pente game in Javascript</p>
-		            <p>Status: Interface works with several known bugs involving moves sandwiching 2 opponent pieces and simultaneously completing a chain of 5 in a row. Working on an AI to play against the user</p>
-		        </div>
-		    </div>
-				<div class="row">
-		        <div class="column">
-		            <img style="width: 374px; height: 215px;" alt="220Proj1-2" src="Walle.png"><br>
-		            <p><b>Image Manipulation</b></p>
-		            <p>2 Projects for CS220 to implement image manipulation methods in JavaScript to blur images, filter by color channel, highlight edges, black and white, etc. First implemented through arrays and then redone with higher order functions like Map, Filter, and Reduce.</p>
-		            <p>Status: Completed</p>
-		        </div>
-		        <div class="column">
-		            <img style="width: 374px; height: 215px;" alt="220Proj3" src="Matchmaking.png"><br>
-		            <p><b>Matchmaking</b></p>
-		            <p>Project for CS220 to use JavaScript to implement and test the stability of the Gale-Shapley matchmaking algorithm on a set of companies and candidates based on their preferences. Created tests to confirm the stability of the algorithm and that it returns correct result.</p>
-		            <p>Status: Completed</p>
-		        </div>
-		        <div class="column">
-		          <img style="width: 374px; height: 215px;" alt="TextAdventure" src="JSON.png"><br>
-		          <p><b>Data Wrangling with JSON</b></p>
-		          <p>Project for CS220 to use topics learned in class such as fluentfilters and higher order functions to create a filering tool for restaurants in the Yelp dataset in JSON format. Created tests to ensure successful return for each function.</p>
-		          <p>Status: Completed</p>
-		        </div>
-		    </div>
-		    <div class="row">
-		        <div class="column">
-		            <img style="width: 374px; height: 215px;" alt="ConnectFour" src="Interpreter.png"><br>
-		            <p><b>Interpreter</b></p>
-		            <p>Project for CS220 to write a basic interpreter for a small amount of JavaScript in JavaScript. Were provided a parser function and implemented functions for evaluating expressions such as addition, subtraction, multiplication, boolean expressions, etc. Interpreter also works for basic blocks, statements, and mini programs.</p>
-		            <p>Status: Completed</p>
-		        </div>
-		        <div class="column">
-		          <img style="width: 374px; height: 215px;" alt="TextAdventure" src="RRT.png"><br>
-		          <p><b>Rapidly-Exploring Random Trees</b></p>
-		          <p>Project for CS220 to implement helper functions in JavaScript to assist a RRT algorithm in finding collision-free paths in 2-dimensional space.</p>
-		          <p>Status: Completed</p>
-		        </div>
-						<div class="column">
-		            <img style="width: 374px; height: 215px;" alt="RPGChess" src="RPGChess.png"><br>
-		            <p><b>RPG Chess</b></p>
-		            <p>Working on an individual long term project of a turn based combat game with a 12x16 board in Java. Now features 15 playable pieces and option to select 10 pieces for a team</p>
-		            <p>Status: Expanding amount of pieces and working on new creative ability types and interactions like summoning, AOE, DOT, protections, and various buffs. Looking for a new name for the game.</p>
-		        </div>
-		    </div>
-				<div class="row">
-					 <div class="column">
-							 <img style="width: 374px; height: 215px;" alt="ConnectFour" src="ConnectFour.png"><br>
-							 <p><b>Connect Four</b></p>
-							 <p>Project for CS230 to implement a connect four game in C and create a simple AI to play against the player. Used a variant of the Min-Max algorithm to determine AI moves based on the board state and selected most optimal move. Printed formatted board to console after every move and saved moves to history.</p>
-							 <p>Status: Completed</p>
-					 </div>
-					 <div class="column">
-						 <img style="width: 374px; height: 215px;" alt="TextAdventure" src="TextAdventure.png"><br>
-						 <p><b>Text Adventure</b></p>
-						 <p>Project for CS230 to implement a text adventure game in C in a group of 3. Created a map with the objective of visiting each room and using an item to solve the bigger puzzle and win. Used data structures in C to implement rooms and items and makefile to easily recompile code.</p>
-						 <p>Status: Completed</p>
-					 </div>
-					 <div class="column">
-							<img style="width: 374px; height: 215px;" alt="WordFreak" src="WordFreak.png"><br>
-							<p><b>WordFreak</b></p>
-							<p>Project for CS230 to create a program in C to parse through large text files and count/store how many times every word appeared in the text and then print the totals to the console. Made use of File IO and limited System Calls as well as environmental variables, piping, command line arguments, and keeping track of memory usage.</p>
-							<p>Status: Completed</p>
-					</div>
-			 </div>
-			 <div class="row">
-					<div class="column">
-							<img style="width: 374px; height: 215px;" alt="Threads" src="Threads.png"><br>
-							<p><b>Threads and Synchronization</b></p>
-							<p>Project for CS230 to implement a program using threads and semaphores in C to simulate a ticket ordering call center with 5 lines and 3 operators so that any number of callers can call and wait until they connect to operator and buy a ticket.</p>
-							<p>Status: Completed</p>
-					</div>
-					<div class="column">
-						<img style="width: 374px; height: 215px;" alt="MathBot" src="MathBot.png"><br>
-						<p><b>Math Bot</b></p>
-						<p>Project for CS230 to write a computer networking client to connect to remote server in C and automatically answer a series of math problems by sending and recieving problems and solutions to the server until we are sent a flag that indicates the end of the program.</p>
-						<p>Status: Completed</p>
-					</div>
-					<div class="column">
+  <!-- skills Section -->
+  <section class="page-section portfolio" id="skills">
+  <!--<section class="page-section bg-primary text-white mb-0" id="about">-->
+    <div class="container">
 
-				 </div>
-			</div>
-		</div>
-	</body>
+      <!-- About Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+      <!--<h2 class="page-section-heading text-center text-uppercase text-white">-->Skills</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- About Section Content -->
+      <div class="row">
+        <div class="col-lg-42 mr-auto">
+          <p class="lead">Programming</p>
+          <p class="lead"><ul>Experience programming with: Java (advanced), JavaScript (intermediate), C (intermediate), Python (beginner)</ul></p>
+          <p class="lead">Technologies</p>
+          <p class="lead:"><ul>Data Structures, JUnit Testing, Image Processing, Networking, GUIs, Threads/Processes, HTML, CSS, Linux</ul></p>
+          <p class="lead">Coursework</p>
+          <p class="lead"><ul>Computer Science: Intro to Problem Solving with Computers, Programming with Data Structures, Intro to Computation, Programming Methodology, Computer Systems Principles, Reasoning Under Uncertainty, Intro to Algorithms, Artificial Intelligence, Web Development,</ul></p>
+          <p class="lead"><ul>Mathematics: Calculus (I, II, and III), Physics I & II, Intro to Linear Algebra, Statistics I, Differential Equations, Intro to Abstract Algebra I</ul></p>
+        </div>
+        <div class="col-lg-42 ml-auto">
+            
+            <p class="lead">Videography and Design</p>
+            <p class="lead"><p><ul>Advanced: Premiere Pro, Final Cut Pro X (Video Editing), Photoshop (Graphic Design), Microsoft Office Suite</ul></p>
+            <p class="lead"><ul>Intermediate: Illustrator (Graphic Design), After Effects (Visual Effects and Animation), HTML (Web Design)</ul></p>
+            <p class="lead"><ul>Beginner: InDesign (Page Design), XD (UX/UI Design), Audition (Audio)</ul></p>
+          </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="page-section portfolio" id="project">
+    <div class="container">
+
+      <!-- Portfolio Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Featured Projects</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Portfolio Grid Items -->
+      <div class="row">
+
+        <!-- Portfolio Item 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/HackUmassVI.png" alt="">
+          </div>
+          <p class="lead">Hack Umass VI</p>
+          <p>Remote light switch application in Java</p>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/HackCornell.png" alt="">
+          </div>
+          <p class="lead">Hack Cornell 2018</p>
+          <p>Testing matchmaking algorithms in python</p>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/Pente.png" alt="">
+          </div>
+          <p class="lead">Pente</p>
+          <p>Collaborating on in-browser pente game</p>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/Walle.png" alt="">
+          </div>
+          <p class="lead">CS220 Projects</p>
+          <p>Programming methodology class</p>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/MathBot.png" alt="">
+          </div>
+          <p class="lead">CS230 Projects</p>
+          <p>Computer systems principles class</p>
+        </div>
+
+        <!-- Portfolio Item 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/RPGChess.png" alt="">
+          </div>
+          <p class="lead">RPGChess</p>
+          <p>Java "chess" game with GUI</p>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+
+        <!-- Footer Location -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Location</h4>
+          <p class="lead mb-0">School Year: Amherst, MA 01002</p>
+          <p class="lead mb-0">Home Address: N. Andover, MA 01845</p>
+        </div>
+
+        <!-- Footer Social Icons -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Other Sites</h4>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yshneyderman/">
+            <i class="fab fa-fw fa-linkedin-in"></i>
+          </a>
+          <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/yshneyderman">
+            <i class="fab fa-fw fa-github"></i>
+          </a>
+        </div>
+
+        <!-- Footer About Text -->
+        <div class="col-lg-4">
+          <h4 class="text-uppercase mb-4">Contact</h4>
+          <p class="lead mb-0">Feel free to send me a message on LinkedIn or
+            email me at yshneyderman@umass.edu
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Copyright Section -->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container">
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
+  <!-- Portfolio Modals -->
+
+  <!-- Portfolio Modal 1 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hack Umass VI</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/hackumassvi.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <p class="mb-5">Worked with a small team of computer science and computer engineering students to design a remote light switch and curtain opener with desktop application in Java to help make dorm life easier for UMass students. Led the development of the GUI and attempted to link the application over Bluetooth to a Raspberry Pi operating the motor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 2 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hack Cornell 2018</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/hackcornell.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <p class="mb-5">Continuing old project started at Hack Cornell 2018. Designing simple matchmaking algorithms in Python based on calculated MMR, KDA, hours played, points scored, and other metrics</p>
+                <button class="btn btn-primary" onclick=" window.open('https://github.com/yshneyderman/Matchmaking','_blank')">
+                  <i class="fab fa-fw fa-github"></i>
+                  GitHub Repository
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 3 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Pente</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/pente.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <p class="mb-5">Collaborating on a web browser pente game in Javascript</p>
+                <button class="btn btn-primary" onclick=" window.open('https://github.com/aryansingh12/Pente','_blank')">
+                  <i class="fab fa-fw fa-github"></i>
+                  GitHub Repository
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 4 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS220 Projects</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/walle.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <p class="mb-5">Image Manipulation</p>
+                <p class="mb-5">2 Projects for CS220 to implement image manipulation methods in JavaScript to blur images, filter by color channel, highlight edges, black and white, etc. First implemented through arrays and then redone with higher order functions like Map, Filter, and Reduce.</p>
+                <p class="mb-5">Matchmaking</p>
+                <p class="mb-5">Project for CS220 to use JavaScript to implement and test the stability of the Gale-Shapley matchmaking algorithm on a set of companies and candidates based on their preferences. Created tests to confirm the stability of the algorithm and that it returns correct result.</p>
+                <p class="mb-5">Data Wrangling with JSON</p>
+                <p class="mb-5">Project for CS220 to use topics learned in class such as fluentfilters and higher order functions to create a filering tool for restaurants in the Yelp dataset in JSON format. Created tests to ensure successful return for each function.</p>
+                <p class="mb-5">Interpreter</p>
+                <p class="mb-5">Project for CS220 to write a basic interpreter for a small amount of JavaScript in JavaScript. Were provided a parser function and implemented functions for evaluating expressions such as addition, subtraction, multiplication, boolean expressions, etc. Interpreter also works for basic blocks, statements, and mini programs.</p>
+                <p class="mb-5">Rapidly-Exploring Random Trees</p>
+                <p class="mb-5">Project for CS220 to implement helper functions in JavaScript to assist a RRT algorithm in finding collision-free paths in 2-dimensional space.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 5 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS230 Projects</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/mathbot.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <p class="mb-5">Connect Four</p>
+                <p class="mb-5">Project for CS230 to implement a connect four game in C and create a simple AI to play against the player. Used a variant of the Min-Max algorithm to determine AI moves based on the board state and selected most optimal move. Printed formatted board to console after every move and saved moves to history.</p>
+                <p class="mb-5">Text Adventure</p>
+                <p class="mb-5">Project for CS230 to implement a text adventure game in C in a group of 3. Created a map with the objective of visiting each room and using an item to solve the bigger puzzle and win. Used data structures in C to implement rooms and items and makefile to easily recompile code.</p>
+                <p class="mb-5">WordFreak</p>
+                <p class="mb-5">Project for CS230 to create a program in C to parse through large text files and count/store how many times every word appeared in the text and then print the totals to the console. Made use of File IO and limited System Calls as well as environmental variables, piping, command line arguments, and keeping track of memory usage.</p>
+                <p class="mb-5">Threads and Synchronization</p>
+                <p class="mb-5">Project for CS230 to implement a program using threads and semaphores in C to simulate a ticket ordering call center with 5 lines and 3 operators so that any number of callers can call and wait until they connect to operator and buy a ticket.</p>
+                <p class="mb-5">Math Bot</p>
+                <p class="mb-5">Project for CS230 to write a computer networking client to connect to remote server in C and automatically answer a series of math problems by sending and recieving problems and solutions to the server until we are sent a flag that indicates the end of the program.</p>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 6 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">RPGChess</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/rpgchess.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <p class="mb-5">Working on an individual long term project of a turn based combat game with a 12x16 board in Java. Now features 15 playable pieces and option to select 10 pieces for a team.</p>
+                <button class="btn btn-primary" onclick=" window.open('https://github.com/yshneyderman/RPGChess','_blank')">
+                  <i class="fab fa-fw fa-github"></i>
+                  GitHub Repository
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Portfolio Modal 7 -->
+   <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-labelledby="portfolioModal7Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">RPGChess</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Portfolio Modal - Image -->
+                  <img class="img-fluid rounded mb-5" src="img/portfolio/rpgchess.png" alt="">
+                  <!-- Portfolio Modal - Text -->
+                  <p class="mb-5">Fav Films!!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/freelancer.min.js"></script>
+
+</body>
+
 </html>
