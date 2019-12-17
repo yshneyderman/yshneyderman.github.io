@@ -133,7 +133,7 @@
           <p class="lead">Programming</p>
           <p class="lead"><ul>Experience programming with: Java (3 Yrs), JavaScript (2 Yrs), C (1 Yr), Python (1 Yr)</ul></p>
           <p class="lead">Technologies</p>
-          <p class="lead:"><ul>Data Structures, Unit Testing, Image Processing, Networking, GUIs, Threads/Processes, Web Development, HTML, CSS, jQuery, Node.js, MongoDB, Mongoose, MySQL, SQL, Linux</ul></p>
+          <p class="lead:"><ul>Data Structures, Unit Testing, Image Processing, Networking, GUIs, Threads/Processes, Web Development, HTML, CSS, jQuery, Node.js, MongoDB, Mongoose, Mustache, Express, MySQL, SQL, Linux</ul></p>
           <p class="lead">Coursework</p>
           <p class="lead"><ul><b>Computer Science: </b>Intro to Problem Solving with Computers, Programming with Data Structures, Intro to Computation, Programming Methodology, Computer Systems Principles, Reasoning Under Uncertainty, Intro to Algorithms, Artificial Intelligence, Web Development,</ul></p>
           <p class="lead"><ul><b>Mathematics: </b>Calculus (I, II, and III), Physics I & II, Intro to Linear Algebra, Statistics I, Differential Equations, Intro to Abstract Algebra I</ul></p>
@@ -255,6 +255,21 @@
           </div>
           <p class="lead">CS383 Projects</p>
           <p>Artificial intelligence class</p>
+        </div>
+
+        <!-- Portfolio Item 7 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal9">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="./img/portfolio/TuneRater.png" alt="TuneRater screenshot">
+          </div>
+          <p class="lead">CS26 Project</p>
+          <p>Web development class</p>
         </div>
 
       </div>
@@ -500,6 +515,43 @@
     </div>
   </div>
 
+  <!-- Portfolio Modal 9 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-labelledby="portfolioModal9Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS326 Project</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="./img/portfolio/TuneRater.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <p class="mb-5">TuneRater</p>
+                <p class="mb-5">A website where aspiring musicians can upload their music and other users can provide ratings, critiques, and suggestions for how they can improve. It features an improved feedback system to have more relevant feedback than YouTube and Spotify. This is much needed in a world where many artists upload their work to YouTube or Spotify and can't receive any helpful feedback short of internet harassment, likes, or simply getting ignored. This will provide a platform for serious artists to get useful critiques of their music so that they may improve their skills and learn from others and create a community of such work.</p>
+                <p class="mb-5">A project for CS326. Worked in group of 4 to create a music listening and rating website using JavaScript, HTML, CSS, Node.js, MongoDB, Mongoose, Mustache templates to create a server and database to upload and store music information.</p>
+                <button class="btn btn-primary" onclick=" window.open('https://github.com/yshneyderman/326Project','_blank')">
+                  <i class="fab fa-fw fa-github"></i>
+                  GitHub Repository
+                </button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Portfolio Modal 6 -->
   <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
@@ -602,6 +654,8 @@
          </div>
        </div>
      </div>
+
+     
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
