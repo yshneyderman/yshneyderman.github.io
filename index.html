@@ -42,6 +42,9 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#project">Projects</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Design Portfolio</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://github.com/yshneyderman/yshneyderman.github.io/raw/master/Yefim%20Shneyderman%20Resume.pdf"><i class="fa fa-download" aria-hidden="true"></i> Resume</a>
           </li>
         </ul>
@@ -65,7 +68,7 @@
 
 
   <!-- About Section -->
-  <section class="page-section portfolio" id="about">
+  <section class="page-section portfolio" id="about" style="margin-top: -10px;">
   <!--<section class="page-section bg-primary text-white mb-0" id="about">-->
     <div class="container">
 
@@ -82,7 +85,7 @@
       <div class="row">
         <div class="col-lg-4 ml-auto" style="padding:8px">
             <img class="masthead-avatar mb-5" src="rocks.png" align="center" width=380px alt="picture of me at glacier">
-            <p align="center">A morning hike while camping at Glacier National Park, MT - Summer 2019.</p>
+            <p style="width:380px" align="center">A morning hike while camping at Glacier National Park, MT - Summer 2019.</p>
         </div>
         <div class="col-lg-41 ml-auto" style="padding:8px">
           <p class="lead">I'm a junior Computer Science and Mathematics Major at the University of Massachusetts Amherst.</p>
@@ -114,7 +117,7 @@
   </section>
 
   <!-- skills Section -->
-  <section class="page-section portfolio" id="skills">
+  <section class="page-section portfolio" id="skills" style="margin-top: -110px;">
   <!--<section class="page-section bg-primary text-white mb-0" id="about">-->
     <div class="container">
 
@@ -152,8 +155,8 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="project">
+  <!-- Projects Section -->
+  <section class="page-section portfolio" id="project" style="margin-top: -110px;">
     <div class="container">
 
       <!-- Portfolio Section Heading -->
@@ -278,20 +281,101 @@
     </div>
   </section>
 
+  <!-- Portfolio Section -->
+  <section class="page-section portfolio" id="portfolio" style="margin-top: -110px;">
+    <div class="container">
+
+      <!-- Portfolio Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Design/Video Portfolio</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Portfolio Grid Items -->
+      <div class="row">
+
+        <!-- Portfolio Item 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="./img/portfolio/HackUmassVI.png" alt="Hack Umass app screenshot">
+          </div>
+          <p class="lead">Hack Umass VI</p>
+          <p>Remote light switch application in Java</p>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="./img/portfolio/RPGChess.png" alt="RPGChess screenshot">
+          </div>
+          <p class="lead">RPGChess</p>
+          <p>RPG themed chess-like game in Java</p>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="./img/portfolio/Pente.png" alt="Pente game screenshot">
+          </div>
+          <p class="lead">Pente</p>
+          <p>Collaborating on in-browser Pente game</p>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <i class="fas fa-plus fa-3x"></i>
+                <p>MORE INFO</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="./img/portfolio/Pente.png" alt="Pente game screenshot">
+          </div>
+          <p class="lead">Pente</p>
+          <p>Collaborating on in-browser Pente game</p>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">
-      <div class="row">
+      <div class="row" style="padding-left:50px;padding-right:50px;">
 
         <!-- Footer Location -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="col-lg-43 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Location</h4>
-          <p class="lead mb-0">School Year: Amherst, MA 01002</p>
+          <p class="lead mb-0">School Year Address: Amherst, MA 01002</p>
           <p class="lead mb-0">Home Address: N. Andover, MA 01845</p>
         </div>
 
         <!-- Footer Social Icons -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
+        <div class="col-lg-43 mb-5 mb-lg-0">
           <h4 class="text-uppercase mb-4">Other Sites</h4>
           <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yshneyderman/">
             <i class="fab fa-fw fa-linkedin-in"></i>
@@ -302,7 +386,7 @@
         </div>
 
         <!-- Footer About Text -->
-        <div class="col-lg-4">
+        <div class="col-lg-43">
           <h4 class="text-uppercase mb-4">Contact</h4>
           <p class="lead mb-0">Feel free to send me a message on LinkedIn or
             email me at yshneyderman@umass.edu
