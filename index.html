@@ -1,923 +1,948 @@
 <!DOCTYPE html>
-<html lang="en">
-<!--A giant mess of bootstrap starter template-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="Console.png">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
+a {
+  color: #001C55;
+}
+
+body {
+  background-color: #ffffff;
+  font-family:"Open Sans", sans-serif;
+}
+
+.navbar {
+  padding-bottom: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.main-nav {
+  list-style-type: none;
+  display: none;
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: rgb(0, 28, 85, 1.0);
+  font-family:"Open Sans", sans-serif;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size:16;
+  font-size: 1.25vw;
+  font-weight: 500;
+  font-stretch:130%;
+  line-height:normal;
+  display: inline-block;
+}
+
+.main-nav li {
+  text-align: center;
+  margin-top: -15px;
+}
+
+.logo {
+  display: inline-block;
+  padding: 17px 10px;
+  font-size: 22px;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  cursor: pointer;
+  color: #001C55;
+  font-size: 24px;
+}
+
+.active {
+  display: block;
+ 
+}
+
+#current {
+  display: block; 
+  font-weight: 650;
+}
+
+@media screen and (min-width: 1500px) {
+  .nav-links {
+    font-size: 0.95vw;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+  }
+
+  .main-nav {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .main-nav li {
+    margin: 0;
+  }
+
+  .nav-links {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 17px 18px;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .nav-links:hover {
+    background-color: rgb(166,225,250);
+  }
+
+  .navbar {
+    position: fixed;
+    right: 10px;
+    width: 95%;
+  }
+}
+
+  h1 {
+    color: #001C55;
+  }
+
+  .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 85px;
+  background-color: #333333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 2;
+  bottom: 100%;
+  left: 100%;
+  margin-left: -64px;
+  margin-bottom: 3px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  padding-top: 20px; /* Location of the box */
+  padding-bottom: 20px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.close {
+  color: #a6b8dd;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top:-15px;
+}
+
+.close:hover,
+.close:focus {
+  color: #001C55;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
 <head>
-    <link rel="icon" href="./Icon.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Yefim Shneyderman</title>
-
-    <!-- Custom fonts for this theme -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-
+  <title>Yefim Shneyderman</title>
 </head>
+<body>
+  <div style="z-index: 1; position:fixed; background-color: #ffffff; width:100%; height:85px;">
+  <div style="margin-top: 10px; margin-left: 30px; margin-right: 25px;">
+  <nav class="navbar">
+    <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fa fa-bars"></i>
+        </span>
+    <a href="#" class="logo">&lt;Yefim Shneyderman/&gt;</a>
+    <ul class="main-nav" id="js-menu">
+      <li>
+        <a href="#" class="nav-links" id="current">Home</a>
+      </li>
+      <li>
+        <a href="#Education" class="nav-links">Education</a>
+      </li>
+      <li>
+        <a href="#Skills" class="nav-links">Skills</a>
+      </li>
+      <li>
+        <a href="#Projects" class="nav-links">Projects</a>
+      </li>
+      <li>
+        <a href="#Experience" class="nav-links">Experience</a>
+      </li>
+      <li>
+        <a href="https://github.com/yshneyderman/yshneyderman.github.io/raw/master/Yefim%20Shneyderman%20Resume.pdf" class="nav-links" style="background-color: rgb(166,225,250,0.5);"><i class="fa fa-download"></i>&nbsp;&nbsp;Resume</a>
+      </li>
+    </ul>
+  </nav>
+  </div>
+</div>
+<div style="padding-top: 100px; margin-right: 40px; margin-left: 40px;">
+  <div style="width: 40%; float: left;">
+    <div style="float:right">
+    <img src="profilewhiteorigcolorcorrected.png" width="300px" style="margin-left: auto; margin-right: auto; display: block; margin-top:100px;">
+    <p style="text-align:center;padding-top:20px; font-size:0.95em;color:#001C55; padding-right: 70px; padding-left: 70px; max-width:500px" >Presenting at ULaunch business startup competition, 2020</p>
+    </div>
+  </div>
+  <div style="width: 60%; float: left;margin-top:20px; font-size:1.2em;color:#001C55; padding-right: 120px; padding-left: 40px; max-width:900px;">
+    <h1 style="font-size:2.3em; text-align: center">Yefim Shneyderman</h1><br>
+    <p style="margin-bottom:12px">I'm a senior Computer Science and Mathematics Major at the University of Massachusetts Amherst.</p>
+    <p style="margin-bottom:12px">As a student I am very passionate about learning and love using technology to solve problems around me.</p>
+    <p style="margin-bottom:12px">I'm very interested in learning about and working on software design/development, UX/UI development, graphic design, sustainability, and artificial intelligence. I am seeking internships to help gain some more useful skills while I look to begin a Masters Degree.</p>
+    <p style="margin-bottom:12px">In my free time I like coding, hiking, painting, listening to music, reading, swimming, badminton, and watching my favorite movies/tv shows.</p>
+    <div style="text-align:center; margin-top:25px;">
+      <div id="movies" style="z-index: 0;text-align:center; display: inline-block;position:relative; width:230px; height: 50px; background-color:#CCF0FF;padding:10px;cursor: pointer;" onmouseover="shadow('movies')" onmouseout="unshadow('movies')" onclick="modal('moviesModal')">
+        <p style="font-size:0.9em;color:#001C55;font-weight:600">Favorite Films / TV</p><br>
+      </div>
+    </div>
+      
+    </div>
+  </div>
+  <div id="moviesModal" class="modal">
+    <div class="modal-content" style="height:940px; text-align:center; min-width:950px">
+      <span class="close" id="moviesModalClose">&times;</span>
+      <p style="font-size:1.4em;color:#001C55;font-weight:600">Favorite Films</p><br>
+      <div style="margin-bottom:30px;">
+        <div style="float:left; width:50%; text-align: left; padding:10px">
+          <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+          • Schindler's List<br> • The Lord of the Rings: The Fellowship of the Ring<br> • The Lord of the Rings: The Two Towers<br> • The Lord of the Rings: The Return of the King<br> • The Hobbit: An Unexpected Journey<br> • The Hobbit: The
+          Desolation of Smaug<br> • The Hobbit: The Battle of Five Armies<br> • The Green Mile<br> • Enemy at the Gates<br> • White Sun of the Desert (Russian: Белое солнце пустыни)<br> • Das Boot<br> • Ivan Vasilievich Changes Profession
+          (Russian: Иван Васильевич меняет профессию)<br> • Diamond Arm (Russian: Бриллиантовая рука)<br> • Kidnapping, Caucasian Style (Russian: Кавказская пленница)<br> • Ip Man<br> • Inception<br> • Forrest Gump<br> • The Matrix<br> • How
+          to Steal a Million<br> • Hereditary<br> • Annihilation<br> • One Flew Over the Cuckoo's Nest<br> • Se7en<br> • Les Intouchables<br> • Aladdin<br> • Leon: The Professional<br> • The Truman Show<br> • The Princess Bride<br>
+           •Avengers: Infinity War<br> • Avengers: Endgame<br> • Thor Ragnarok<br> • Pan's Labyrinth<br> • V for Vendetta<br> • Qu'est-ce qu'on a fait au Bon Dieu?<br> • Fight Club<br> • Stranger Things <br> • Money Heist <br> • The Boys
+           <br> • The Expanse <br> • Jack Ryan <br> • True Grit
+          </p> 
+        </div>
+        <div style="float:right; width:50%; text-align:left; padding:10px">
+        <p style="float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">• Les Anges Gardiens<br> • Gladiator
+        <br> • Law Abiding Citizen<br> • Parasite (Korean: 기생충)<br> • Constantine<br> • Project Gutenberg (Chinese: 無雙)<br> • WALLE<br> • Contact<br> • Bestseller<br> • The Russians Are Coming, the Russians Are Coming<br> • Coco<br> • Up<br> • Inglorious
+        Basterds<br> • Good Will Hunting<br> • Braveheart<br> • Ivanhoe BBC Miniseries<br> • Lawrence of Arabia<br> • Some Like It Hot<br> • Life of Pi<br> • Namesake<br> • The Shawshank Redemption<br> • Get Out<br> • Lincoln Lawyer
+        <br> • Knives Out <br> • Dunkirk<br> • The Burbs<br> • Batman Begins<br> • The Dark Knight<br> • The Dark Knight Rises<br> • Children of Men<br> • Stand Up Guys<br> • The Good, the Bad and the Ugly<br> • District 9<br> • Interstellar<br> • The 100-Year-Old Man Who Climbed Out the Window
+        and Disappeared<br> • Elysium<br> • Game of Thrones<br> • Black Mirror <br> • The Witcher <br> • South Park
+      </p>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<body id="page-top">
+<div id="Contact" style="width:100%; text-align:center; float:left; padding-top:75px; margin-top:-30px; margin-bottom:0px;min-width:600px">
+  <h1 style="font-size:2.3em; text-align: center">Contact Me</h1><br>
+  <p style="font-size:1.1em; margin-bottom:15px;">Feel free to send a message on LinkedIn...<br> or send me an email at yshneyderman@umass.edu.</p>
+  <div class="tooltip">
+    <div style="z-index: 0;text-align:center; display: inline-block;position:relative; width:50px; height: 50px; padding:10px;cursor: pointer; font-size: 50px; margin-right:10px;" onmouseover="shadow('giticon')" onmouseout="unshadow('giticon')" onclick="window.open('https://github.com/yshneyderman','_blank')">
+      <i id="giticon" class="fa fa-github" style="color:#001C55; border-radius: 100px; width:50px"></i>
+    </div>
+    <span class="tooltiptext" style="margin-bottom:-15px">GitHub</span>
+  </div>
+  <div class="tooltip">
+    <div style="z-index: 0;text-align:center; display: inline-block;position:relative; width:50px; height: 50px; padding:10px;cursor: pointer; font-size: 50px;margin-right:10px;" onmouseover="shadow('linkedinicon')" onmouseout="unshadow('linkedinicon')" onclick="window.open('https://www.linkedin.com/in/yshneyderman/','_blank')">
+      <i id ="linkedinicon" class="fa fa-linkedin-square" style="color:#001C55; width:50px; border-radius:12px;"> </i>
+    </div>
+    <span class="tooltiptext" style="margin-bottom:-15px">LinkedIn</span>
+  </div>
+  <div class="tooltip">
+    <div style="z-index: 0;text-align:center; display: inline-block;position:relative; width:50px; height: 50px; padding:10px;cursor: pointer; font-size: 50px;margin-right:10px;" onmouseover="shadow('emailicon')" onmouseout="unshadow('emailicon')" onclick="window.open('mailto:yshneyderman@umass.edu')">
+    <i id="emailicon" class="fa fa-envelope" style="color:#001C55;cursor:pointer; width:60px; border-radius: 8px;"></i>
+  </div>
+  <span class="tooltiptext" style="margin-bottom:-15px;">Email</span>
+  </div>
+    
+  </div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" style="
-    box-shadow: 0px 1px 2px 2px rgba(1, 1, 1, 0.3);
-">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Yefim Shneyderman</a>
-            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About Me</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#project">Projects</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Design Portfolio</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://github.com/yshneyderman/yshneyderman.github.io/raw/master/Yefim%20Shneyderman%20Resume.pdf"><i class="fa fa-download" aria-hidden="true"></i> Resume</a>
-                    </li>
-                </ul>
+  <div id="Education" style="width:100%; text-align:center; float:left; padding-top:75px; margin-top:-30px; margin-bottom:-70px;min-width:600px">
+    <h1 style="font-size:2.3em; text-align: center">Education</h1><br>
+    <div id="UMass" style="max-width:1400px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 240px; margin-left:10px; margin-right:10px;background-color:rgb(166,225,250);padding: 30px;min-width:600px">
+      <div style="float:right;position:absolute;top:30px;right:40px"><p style="font-size:1.1em;color:#001C55;font-weight:600">GPA: 3.870</p></div>
+      <img src="https://img.icons8.com/windows/64/000000/university.png" width="30px" style="float:left"/>
+      <p style="width:90%; float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">University of Massachusetts Amherst</p><br>
+      <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Bachelor of Science</p><br>
+      <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Double Major in Computer Science and Mathematics with Concentration in Computing</p><br>
+      <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">Awards: Dean's List, John and Abigail Adams Scholarship</p><br>
+      <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">Activities and Societies: UMass Cybersecurity Club, UMass Design Club, UMass Association for Computing Machinery</p><br>
+    </div>
+    <div id="UMassClick" style="max-width:1400px;min-width:600px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 45px; margin-left:10px; margin-right:10px;background-color:#CCF0FF; margin-bottom:0px; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;" onclick="expandEducation()" onmouseover="shadow('UMassClick')" onmouseout="unshadow('UMassClick')">
+      <p style="width:50%; float:left; font-size:1.0em;margin-left:4px;color:#001C55;font-weight:600">Coursework</p>
+      <div id="caret"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+    </div>
+    <div id="Courses" style="max-width:1400px;display: inline-block; z-index: 0; text-align:center; position:relative; width:90%; margin-left:10px; margin-right:10px;padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; margin-bottom:20px;">
+      <div class="course" style="display:none; z-index: 0; text-align:left; margin-bottom: 10px; position:relative; width:100%; background-color:#e4f7ff; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;">
+        <p style="font-size:0.9em;color:#001C55;font-weight:600">Computer Science / Math: <p style="font-size:0.9em;color:#001C55;font-weight:400">Calculus (I, II, III),
+        Physics (I, II),
+        Problem Solving with Computers,
+        Data Structures,
+        Computation,
+        Programming Methodology,
+        Computer Systems Principles,
+        Reasoning Under Uncertainty,
+        Algorithms,
+        Artificial Intelligence,
+        Web Development,
+        Machine Learning,
+        Operating Systems,
+        Linear Algebra,
+        Statistics (I, II),
+        Differential Equations,
+        Abstract Algebra I</p>
+        <p style="font-size:0.9em;color:#001C55;font-weight:600">In Progress<p style="font-size:0.9em;color:#001C55;font-weight:400">Networks and Security, Applications of Natural Language Processing, Scientific Computing, Combinatorics and Graphs
+        </div>
+        <div class="course" style="z-index: 0; text-align:left; display: none ;position:relative; width:100%; background-color:#e4f7ff; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;">
+          <p style="font-size:0.9em;color:#001C55;font-weight:600">Other: <p style="font-size:0.9em;color:#001C55;font-weight:400">
+        European History,
+        U.S. History,
+        French,
+        English/Writing,
+        Comparative Literature,
+        Microeconomics,
+        Environmental Science</p>
+      </div>
+  </div>
+
+  <div id="Skills" style="width:100%; text-align:center; float:left; padding-top:75px;">
+    <h1 style="font-size:2.3em; text-align: center">Skills</h1><br>
+    <div style="display:inline-block; max-width:1400px;">
+    <div style="text-align:left; float:left; width:50%; padding-right: 20px; padding-left:60px;">
+      <p style="font-size:1.2em;color:#001C55;font-weight:600">Programming</p>
+      <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+      <p>
+          <ul style="padding-bottom:10px;"><b>Languages:</b> Java (3 Yrs), JavaScript (2 Yrs), C/C++ (1 Yr), Python (1 Yr)</ul>
+      </p>
+      <p>
+           <ul style="padding-bottom:10px;"><b>Skills:</b> Data Structures, GitHub, Unit Testing, Image Processing, Machine Learning, Data Visualization, Computational Complexity, Networking, Algorithms, Artificial Intelligence, GUIs, Threads/Processes, Linux, Web Development, Object Oriented Programming, Operating Systems</ul>
+      </p>
+      <p>
+           <ul style="padding-bottom:10px;"><b>Technologies:</b> HTML, CSS, jQuery, Node.js, Matplotlib, scikit-learn, NumPy, MongoDB, Mongoose, Mustache, Express, PostgreSQL, Spring Boot, React, Docker, Kubernetes</ul>
+      </p>
+      </div>
+  </div>
+  <div style="text-align:left; float:right; width:50%; padding-right: 60px; padding-left:20px;">
+    <p style="font-size:1.2em;color:#001C55;font-weight:600">Videography and Design</p>
+    <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+      <p>
+      <p>
+         <ul style="padding-bottom:10px;">I have 7 years of experience in Videography and Graphic Design through self learning and my volunteering at North Andover CAM.</ul>
+      </p>
+      <p>
+      <p>
+         <ul style="padding-bottom:10px;">Alongside my skills with camcorders, GoPro, DSLR cameras, lighting, directing, technical directing, audio, script writing, and storyboarding, I also have experience with: </ul>
+      </p>
+      <p>
+      <p>
+         <ul style="padding-bottom:10px;"><b>Advanced: </b>Premiere Pro, Final Cut Pro X (Video Editing), Photoshop (Graphic Design), Illustrator (Graphic Design), Microsoft Office Suite</ul>
+      </p>
+      <p>
+         <ul style="padding-bottom:10px;"><b>Intermediate:</b> After Effects (Visual Effects and Animation), Lightroom (Photography), InDesign (Page Design), XD (UX/UI Design), Audition (Audio)</ul>
+      </p>
+    </div>
+  </div>
+  </div>
+  </div>
+    <div id="Projects" style="text-align:center; float:left; margin-right:40px; margin-left:40px; padding-top:75px;">
+      <h1 style="font-size:2.3em; text-align: center">Projects</h1><br>
+      <h1 style="font-size:1.1em; text-align: center; font-weight:400; margin-top:-10px; margin-bottom:10px">Click on a project for more information</h1><br>
+      <div id="yshneyderman" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px; background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('yshneyderman')" onmouseout="unshadow('yshneyderman')" onclick="modal('yshneydermanModal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">yshneyderman.github.io</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">A personal website template available to modify and use for your own. Based on Saad Pasta, Ashutosh Hathidara, Bootstrap Portfolio designs.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated on Aug 2020</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/javascript.png" width="35px"/><span class="tooltiptext">JavaScript</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/html-5.png" width="35px"/><span class="tooltiptext">HTML</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/css3.png" width="35px"/><span class="tooltiptext">CSS</span></div>
+        </div>
+      </div>
+
+      <div id="yshneydermanModal" class="modal">
+        <div class="modal-content" style="height:535px; text-align:center; width:950px">
+          <span class="close" id="yshneydermanModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">yshneyderman.github.io</p>
+          <div style="margin-bottom:30px;float:left; width:50%; text-align: center; padding:10px; margin-top: 80px; background-color:#CCF0FF;">
+            <img src="Images/Yshneyderman.png" width="400px" style="margin-top:20px;border-radius:0px; border-style:solid; border-color:#001C55;">
+            <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom:20px;">Old Website view and layout.</p> 
+          </div>
+          <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:45px; padding-left:20px">
+            <p style="float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+              A personal website template available to modify and use for your own. Based on Saad Pasta, Ashutosh Hathidara, Bootstrap Portfolio designs.<br><br>
+              Started working on personal website in March 2019 to keep track of educational and professional interests and showcase skills for potential employers. I've been adding to it anytime new experiences, skills, or classes come up that I believe would be useful to my profile as an applicant to academic programs or work opportunities.<br><br>
+              Added personal and fun information over time. Feel free to copy and change for your own purposes!<br><br>
+              Link to the GitHub repository:<br><br>
+            </p>
+            <div style="text-align:center">
+              <button id="yshneydermanGithub" style="background-color:#CCF0FF; border:none; width:180px; color:#001C55; padding:10px; cursor: pointer;" onmouseover="shadow('yshneydermanGithub')" onmouseout="unshadow('yshneydermanGithub')"  onclick=" window.open('https://github.com/yshneyderman/yshneyderman.github.io','_blank')">
+                <i class="fa fa-fw fa-github" style="color:#001C55"></i>
+              GitHub Repository
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="30days" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('30days')" onmouseout="unshadow('30days')" onclick="modal('30daysModal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">30DaysCoding.com</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Website to teach coding practices and interview preparation. Wrote guides and documents.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated May 2020</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/fluent/48/000000/microsoft-word-2019.png" width="35px"/><span class="tooltiptext">Word</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/office/80/000000/pdf.png" width="35px"/><span class="tooltiptext">PDF</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/javascript.png" width="35px"/><span class="tooltiptext">JavaScript</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/html-5.png" width="35px"/><span class="tooltiptext">HTML</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/css3.png" width="35px"/><span class="tooltiptext">CSS</span></div>
+        </div>
+      </div>
+
+      <div id="30daysModal" class="modal">
+        <div class="modal-content" style="height:580px; text-align:center; width:950px">
+          <span class="close" id="30daysModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">30dayscoding.com</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/30days1.png" width="200px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/30days2.png" width="200px" style="border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/30days3.png" width="200px" style="border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/30days4.png" width="200px" style="border-radius:0px; border-style:solid; border-color:#001C55; display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Screenshots of website and interview guide.</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                An educational website I worked on with a good friend and fellow UMass Amherst CS major <a href="https://github.com/aryansingh12">Aryan Singh</a>. We both agreed that it was unfair for modern resources to help teach people to improve their skills were behind paywalls and only available to people who were members of certain clubs/universities so we sought to create a repository of all of our experience with CS interviews. We had both passed interviews in FAANG companies and reached out to other friends who had similar experience to put together free links, documents, and resources to help teach these concepts.<br><br>
+                We started working in early 2020 and published the site when COVID-19 was declared as a pandemic and everyone was at home - the perfect time to pick up/refresh these skills.<br><br>
+                The initial LinkedIn posts recieved thousands of views and at some points the website had a few hundred users. The site was also featured in newsletters by the CICS department in emails recommending resources for career development. There are still current plans to add more free content such as resume parsers, more tips for acing an interview, and documents written by Aryan and I to discuss programming concepts like Arrays, Linked Lists, etc. with helpful graphics.<br>
+              </p>
             </div>
         </div>
-    </nav>
-    <!-- Masthead -->
-    <!--<header class="masthead bg-primary text-white text-center" style="background-image: url(matrix.gif)">-->
-    <header class="masthead bg-primary text-white text-center" style="background-image: url(lake.JPG); box-shadow: 0px 3px 3px 2px rgba(1, 1, 1, 0.3);">
-        <div class="container d-flex align-items-center flex-column">
+      </div>
 
-            <!-- Masthead Avatar Image -->
-            <!--<img class="masthead-avatar mb-5" src="img/me.png" alt="">-->
-            <p class="masthead-subheading font-weight-light mb-0">Hello World! My name is</p><br>
-            <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0">Yefim Shneyderman</h1>
-
+      <div id="CS589" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('CS589')" onmouseout="unshadow('CS589')" onclick="modal('CS589Modal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS589 Projects</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Series of projects for Machine Learning class. Learned theory and applied to coding projects.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated May 2020</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/python.png" width="35px"/><span class="tooltiptext">Python</span></div>
         </div>
-    </header>
+      </div>
 
-
-
-    <!-- About Section -->
-    <section class="page-section portfolio" id="about" style="margin-top: -10px;">
-        <!--<section class="page-section bg-primary text-white mb-0" id="about">-->
-        <div class="container">
-
-            <!-- About Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-                <!--<h2 class="page-section-heading text-center text-uppercase text-white">-->About Me</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
+      <div id="CS589Modal" class="modal">
+        <div class="modal-content" style="height:1010px; text-align:center; width:950px">
+          <span class="close" id="CS589ModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS589</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/589.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">PCA inputs.</p> 
             </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                A 500 level class covering Machine Learning topics. All assignments came with programming portion and written report to explain processes and provide analysis of topics learned.<br>
+                <br><b>Regression</b><br>
+                Coding project and report on using and comparing different regression techniques on a .CSV dataset. Used python language and scikit-learn(sklearn) and numpy to test out Decision Tree, KNN, and Ridge/Lasso Linear models for regression. Also used K-fold cross validation on MAE's to find and train best model to submit on Kaggle. Analyzed which criteria to look for when choosing a node to split in training a decision tree and analyzed the runtime of cross validation.<br>
+                <br><b>Classification</b><br>
+                Used sklearn and Matplotlib to create Decision Trees, KNN, and Linear Model (hinge and logistic) for dataset. Wrote handwritten derivatives for autodiff in python and autograd to implement a Neural Network to plot Loss vs Epochs of different hidden unit sizes.<br>
+                <br><b>Kernel</b><br>
+                Proved optimal w value for Kernel Ridge Regression and compared results to base expansion. Handwrote python code to compute KRRS vs BERR kernels for given polynomial and trigonometric kernels and compared resulting MSE. Found highest values and submitted to Kaggle. Used sklearn KernelRidge to predict a housing dataset for RBF, Poly. Degree 3, and Linear models of different alpha and gamma values. Used K-Fold cross validation to find best hyperparameters. Used sklearn SVM classifier to do the same for a coronavirus dataset to find best hyperparameters. Scored within top 18.<br>
+                <br><b>Bayesian</b><br>
+                Used Matplotlib and numpy to implement and compare Bayesian vs MAP estimates for dataset and write report why resulting MSE's were different.<br>
+                <br><b>Unsupervised</b><br>
+                Used Matplotlib, numpy, sklearn, scipy, and PIL to implement PCA and compress and decompress 100 face images and plot the respective reconstruction error. Also used K-means to compress a single image and compare how different values of k changed the appearance and compression rate.<br>
+              </p>
+            </div>
+        </div>
+      </div>
 
-            <!-- About Section Content -->
-            <div class="row">
-                <div class="col-lg-4 ml-auto" style="padding:8px; max-width: 100% !important; height: auto; width: auto;">
-                    <img class="masthead-avatar mb-5" src="rocks.png" align="center" width=380px alt="picture of me at glacier">
-                    <p style="width:380px" align="center">A morning hike while camping at Glacier National Park, MT - Summer 2019.</p>
-                </div>
-                <div class="col-lg-41 ml-auto" style="padding:8px">
-                    <p class="lead">I'm a junior Computer Science and Mathematics Major at the University of Massachusetts Amherst.</p>
 
-                    <p class="lead">As a student I am very passionate about learning and love using technology to solve problems around me.</p>
+      <div id="CS377" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('CS377')" onmouseout="unshadow('CS377')" onclick="modal('CS377Modal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS377 Projects</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Series of projects for Operating Systems class. Learned theory and applied to coding projects.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Apr 2020</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" width="35px"/><span class="tooltiptext">C/C++</span></div>
+        </div>
+      </div>
 
-                    <p class="lead">I'm very interested in learning about and working on software development, UX/UI development, graphic design, sustainability, and artificial intelligence. I am looking for internships to help learn more useful skills and expand on
-                        my interests!</p>
+      <div id="CS377Modal" class="modal">
+        <div class="modal-content" style="height:800px; text-align:center; width:950px">
+          <span class="close" id="CS377ModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS377</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/377.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Filesystem implementation project</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                A 300 level class covering Operating Systems topics. Assignments included biweekly programming projects and weekly smaller projects to implement OS concepts - recieved full marks on all projects.<br>
+                <br><b>Inverted Index</b><br>
+                A refresher in C/C++, the objective of this project was to create a data structure that could parse a text file and list the lines where each word in the text file first appears.<br>
+                <br><b>Shell/Scheduling</b><br>
+                Implemented a basic shell in C/C++ that could fork and execute different simple commands in the terminal. Also wrote several scheduling algorithms that we learned in class such as Firt-In, First-Out (FIFO), Shortest Job First (SJF), Shortest Time to Completion First (STCF), Round Robin (RR) and analyzed their efficiency with several metrics.<br>
+                <br><b>Locks, Buffers, and Producer/Consumer Problems</b><br>
+                Created a bounded buffer and used locks and condition variables to solve a producer/consumer problem in C/C++.<br>
+                <br><b>XV6 and Ticket Locks</b><br>
+                A guided project that explored the fundamentals of the xv6 operating system and implemented ticket locks using C/C++.<br>
+                <br><b>Allocator</b><br>
+                Used C/C++ in a very basic shell code to create a malloc allocator/deallocator to store and release memory with several algorithms in mind to minimalize fragmentation.<br>
+                <br><b>Filesystem/b><br>
+                Implemented a filesystem in C/C++ to create and store files using OS fundamentals such as inodes, blocks, superblocks, etc.<br>
+              </p>
+            </div>
+        </div>
+      </div>
 
-                    <p class="lead">In my free time I like coding, hiking, painting, listening to music, reading, swimming, badminton, and watching my favorite movies.</p>
-                    <br>
-                    <div class="row">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
-                            <button class="btn btn-primary">
-                  <i class="fa fa-film"></i>
-                  Favorite Films
+      <div id="CS326" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('CS326')" onmouseout="unshadow('CS326')" onclick="modal('CS326Modal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS326 Projects</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Small Web Development projects from textbook and one team-based large Full Stack App project at the end.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Dec 2019</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/nodejs.png" width="35px"/><span class="tooltiptext">NodeJS</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/mongodb.png" width="35px"/><span class="tooltiptext">MongoDB</span></div>
+          <div class="tooltip"><img src="https://static.thenounproject.com/png/117898-200.png" style="transform: rotate(-90deg)" width="35px"/><span class="tooltiptext">Mustache</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/javascript.png" width="35px"/><span class="tooltiptext">JavaScript</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/html-5.png" width="35px"/><span class="tooltiptext">HTML</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/css3.png" width="35px"/><span class="tooltiptext">CSS</span></div>
+          
+        </div>
+      </div>
+
+      <div id="CS326Modal" class="modal">
+        <div class="modal-content" style="height:535px; text-align:center; width:950px">
+          <span class="close" id="CS326ModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS326</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/TuneRater.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">TuneRater final project screenshot.</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                A 300 level class covering Web Development which began with a basic introduction to HTML/CSS and proceeded to teach about fundamental web technologies, industry trends, and important full stack concepts. Class featured weekly mini-projects as well as a final group project of our choosing.<br>
+                <br><b>TuneRater</b><br>
+                Class formed teams of four and brainstormed a full stack application to develop that met the requirements of implementing certain web technologies and skills we learned through the year. The team worked in a Scrum/agile-like development flow with weekly standup meetings to work towards our goal of creating and presenting a fully functioning web app. The team came up with "TuneRater" - a site for aspiring musicians to create and share their music with a more art based community that could listen and critique their skills as an artist. We felt the need for this website in a world where Spotify and YouTube often did not provide the feedback an artist wants. The project uses Data Storage of music files, info, and account info on MongoDB, and  a Node.js server to interact with (rating, comenting, and sending this info to the database)<br>
+              </p>
+            </div>
+        </div>
+      </div>
+
+
+      <div id="CS383" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('CS383')" onmouseout="unshadow('CS383')" onclick="modal('CS383Modal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS383 Projects</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Series of projects for Artificial Intelligence class. Learned theory and applied to coding projects.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Dec 2019</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/python.png" width="35px"/><span class="tooltiptext">Python</span></div>
+        </div>
+      </div>
+
+      <div id="CS383Modal" class="modal">
+        <div class="modal-content" style="height:600px; text-align:center; width:950px">
+          <span class="close" id="CS383ModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS383</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/SearchAgents.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Search agents on a gridworld.</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                A 300 level class covering Artificial Intelligence topics. Assignments included biweekly programming projets paired with writeup on concepts around Agents, Search, Statistics, Bayesian Networks, Supervised Learning, Classification, Unsupervised Learning, Markov Models, etc. <br>
+                <br><b>Search Algorithms</b><br>
+                Project for CS383 to create agents to find a goal state on a gridworld graph using Breadth First Search, Depth First Search, Greedy Best First Search, Uniform Cost Search, A* Search, and compare the results.<br>
+                <br><b>Minimax, Alpha-Beta Pruning, and CSP</b><br>
+                Project for CS383 to implement an AI in python to use the Minimax algorithm, depth limits, alpha-beta pruning, and several different heuristics to play Isola. Tracked runtime of the agents and win/loss ratios. Used python constraint satisfaction problems to solve sudoku puzzles and course scheduling problems.<br>
+                <br><b>Clustering and Classification</b><br>
+                Project for CS383 to use scikit-learn library in Python to implement k-means clustering on Congressional Votes dataset. Also created a classification program to build a tree based on the same dataset.<br>
+              </p>
+            </div>
+        </div>
+      </div>
+
+
+      <div id="CS230" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('CS230')" onmouseout="unshadow('CS230')" onclick="modal('CS230Modal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS230 Projects</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Series of projects for Computer Systems Principles class. Learned theory and applied to coding projects.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated May 2019</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/c-programming.png" width="35px"/><span class="tooltiptext">C</span></div>
+        </div>
+      </div>
+
+      <div id="CS230Modal" class="modal">
+        <div class="modal-content" style="height:900px; text-align:center; width:950px">
+          <span class="close" id="CS230ModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS230</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/ConnectFour.png" width="200px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/TextAdventure.png" width="200px" style="border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/WordFreak.png" width="200px" style="border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/MathBot.png" width="200px" style="border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Screenshots of various C projects.</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                A 200 level class covering basic computer systems topics. Assignments included biweekly programming projects from subjects ranging from C language fundamentals, networking, threads, processes, etc.<br>
+                <br><b>Connect Four</b><br>
+                Project for CS230 to implement a connect four game in C and create a simple AI to play against the player. Used a variant of the Min-Max algorithm to determine AI moves based on the board state and selected most optimal move. Printed formatted board to console after every move and saved moves to history.<br>
+                <br><b>Text Adventure</b><br>
+                Project for CS230 to implement a text adventure game in C in a group of 3. Created a map with the objective of visiting each room and using an item to solve the bigger puzzle and win. Used data structures in C to implement rooms and items and makefile to easily recompile code.<br>
+                <br><b>WordFreak</b><br>
+                Project for CS230 to create a program in C to parse through large text files and count/store how many times every word appeared in the text and then print the totals to the console. Made use of File IO and limited System Calls as well as environmental variables, piping, command line arguments, and keeping track of memory usage.<br>
+                <br><b>Threads and Synchronization</b><br>
+                Project for CS230 to implement a program using threads and semaphores in C to simulate a ticket ordering call center with 5 lines and 3 operators so that any number of callers can call and wait until they connect to operator and buy a ticket.<br>
+                <br><b>Math Bot</b><br>
+                Project for CS230 to write a computer networking client to connect to remote server in C and automatically answer a series of math problems by sending and recieving problems and solutions to the server until we are sent a flag that indicates the end of the program.<br>
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div id="CS220" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('CS220')" onmouseout="unshadow('CS220')" onclick="modal('CS220Modal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS220 Projects</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Series of projects for Programming Methodologies class. Coding projects in JavaScript.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Dec 2018</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/javascript.png" width="35px"/><span class="tooltiptext">JavaScript</span></div>
+        </div>
+      </div>
+
+      <div id="CS220Modal" class="modal">
+        <div class="modal-content" style="height:850px; text-align:center; width:950px">
+          <span class="close" id="CS220ModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS220</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/Walle.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/Interpreter.png" width="400px" style="border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Screenshots of various JavaScript projects.</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                A 200 level class covering Programming Methodology. Assignments included biweekly programming projects in JavaScript on topics from introductions to JavaScript, hogher order functions, JSON, filters, image processing, pathfinding, etc. <br>
+                <br><b>Image Manipulation</b><br>
+                2 Projects for CS220 to implement image manipulation methods in JavaScript to blur images, filter by color channel, highlight edges, black and white, etc. First implemented through arrays and then redone with higher order functions like Map, Filter, and Reduce.<br>
+                <br><b>Matchmaking</b><br>
+                Project for CS220 to use JavaScript to implement and test the stability of the Gale-Shapley matchmaking algorithm on a set of companies and candidates based on their preferences. Created tests to confirm the stability of the algorithm and that it returns correct result.<br>
+                <br><b>Data Wrangling with JSON</b><br>
+                Project for CS220 to use topics learned in class such as fluentfilters and higher order functions to create a filering tool for restaurants in the Yelp dataset in JSON format. Created tests to ensure successful return for each function.<br>
+                <br><b>Interpreter</b><br>
+                Project for CS220 to write a basic interpreter for a small amount of JavaScript in JavaScript. Were provided a parser function and implemented functions for evaluating expressions such as addition, subtraction, multiplication, boolean expressions, etc. Interpreter also works for basic blocks, statements, and mini programs.<br>
+                <br><b>Rapidly-Exploring Random Trees</b><br>
+                Project for CS220 to implement helper functions in JavaScript to assist a RRT algorithm in finding collision-free paths in 2-dimensional space.<br>
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div id="Pente" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('Pente')" onmouseout="unshadow('Pente')" onclick="modal('PenteModal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">Pente</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Collaborated on in-browser Pente game. Coded backend to track moves and game state.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Apr 2019</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/javascript.png" width="35px"/><span class="tooltiptext">JavaScript</span></div>
+        </div>
+      </div>
+
+      <div id="PenteModal" class="modal">
+        <div class="modal-content" style="height:535px; text-align:center; width:950px">
+          <span class="close" id="PenteModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">Pente</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 40px; background-color:#CCF0FF;">
+              <img src="Images/Pente.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Screenshots of various JavaScript projects.</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                Collaborating with <a href="https://github.com/aryansingh12">Aryan Singh</a> on a web browser Pente game in Javascript. Wrote backend functions for keeping track of game state, legal moves, reporting victory, etc. Hope to create a bot to play.<br>
+              </p>
+              <div style="text-align:center">
+                <button id="penteGithub" style="background-color:#CCF0FF; border:none; width:180px; color:#001C55; padding:10px; cursor: pointer;" onmouseover="shadow('penteGithub')" onmouseout="unshadow('penteGithub')"  onclick=" window.open('https://github.com/aryansingh12/Pente','_blank')">
+                  <i class="fa fa-fw fa-github" style="color:#001C55"></i>
+                GitHub Repository
                 </button>
-                        </div>
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
-                            <button class="btn btn-primary">
-                  <i class="fa fa-book"></i>
-                  Favorite Books
-                </button>
-                        </div>
-                    </div>
-
-                </div>
+              </div>
             </div>
         </div>
-    </section>
+      </div>
 
-    <!-- skills Section -->
-    <section class="page-section portfolio" id="skills" style="margin-top: -110px;">
-        <!--<section class="page-section bg-primary text-white mb-0" id="about">-->
-        <div class="container">
-
-            <!-- About Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-                <!--<h2 class="page-section-heading text-center text-uppercase text-white">-->Skills</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <!-- About Section Content -->
-            <div class="row">
-                <div class="col-lg-42 mr-auto">
-                    <p class="lead">Programming</p>
-                    <p class="lead">
-                        <ul><b>Languages:</b> Java (3 Yrs), JavaScript (2 Yrs), C/C++ (1 Yr), Python (1 Yr)</ul>
-                    </p>
-                    <p class="lead:">
-                        <ul><b>Skills:</b> Data Structures, GitHub, Unit Testing, Image Processing, Machine Learning, Data Visualization, Computational Complexity, Networking, Algorithms, Artificial Intelligence, GUIs, Threads/Processes, Linux, Web Development, Object Oriented Programming, Operating Systems</ul>
-                    </p>
-                    <p class="lead:">
-                        <ul><b>Technologies:</b> HTML, CSS, jQuery, Node.js, Matplotlib, scikit-learn, NumPy, MongoDB, Mongoose, Mustache, Express, PostgreSQL, Spring Boot, React</ul>
-                    </p>
-                    <p class="lead">Coursework</p>
-                    <p class="lead">
-                        <ul><b>Computer Science: </b>Intro to Problem Solving with Computers, Programming with Data Structures, Intro to Computation, Programming Methodology, Computer Systems Principles, Reasoning Under Uncertainty, Intro to Algorithms, Artificial
-                            Intelligence, Web Development, Machine Learning, Operating Systems</ul>
-                    </p>
-                    <p class="lead">
-                        <ul><b>Mathematics: </b>Calculus (I, II, & III), Physics (I & II), Intro to Linear Algebra, Statistics (I & II), Differential Equations, Intro to Abstract Algebra I</ul>
-                    </p>
-                </div>
-                <div class="col-lg-42 ml-auto">
-
-                    <p class="lead">Videography and Design</p>
-                    <p class="lead">
-                        <p>
-                            <ul>I have 7 years of experience in Videography and Graphic Design through self learning and my volunteering at North Andover CAM.</ul>
-                        </p>
-                        <p class="lead">
-                            <p>
-                                <ul>Alongside my skills with camcorders, GoPro, DSLR cameras, lighting, directing, technical directing, audio, script writing, and storyboarding, I also have experience with: </ul>
-                            </p>
-                            <p class="lead">
-                                <p>
-                                    <ul><b>Advanced: </b>Premiere Pro, Final Cut Pro X (Video Editing), Photoshop (Graphic Design), Illustrator (Graphic Design), Microsoft Office Suite</ul>
-                                </p>
-                                <p class="lead">
-                                    <ul><b>Intermediate:</b> After Effects (Visual Effects and Animation), Lightroom (Photography)</ul>
-                                </p>
-                                <p class="lead">
-                                    <ul><b>Beginner: </b>InDesign (Page Design), XD (UX/UI Design), Audition (Audio)</ul>
-                                </p>
-                </div>
-            </div>
-
+      <div id="RPGChess" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('RPGChess')" onmouseout="unshadow('RPGChess')" onclick="modal('RPGChessModal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">RPGChess</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Independently working on RPG themed chess-like game in Java.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Apr 2019</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" width="35px"/><span class="tooltiptext">Java</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Projects Section -->
-    <section class="page-section portfolio" id="project" style="margin-top: -110px;">
-        <div class="container">
-
-            <!-- Portfolio Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Featured Projects</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
+      <div id="RPGChessModal" class="modal">
+        <div class="modal-content" style="height:680px; text-align:center; width:950px">
+          <span class="close" id="RPGChessModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">RPGChess</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 35px; background-color:#CCF0FF;">
+              <img src="Images/RPGChess.png" width="400px" style="margin-top:20px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <img src="Images/TeamSelect.PNG" width="400px" style="border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 20px">Screenshots of game pages.</p> 
             </div>
-
-            <!-- Portfolio Grid Items -->
-            <div class="row">
-
-                <!-- Portfolio Item 9 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal11">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/30Days.png" alt="30DaysCoding">
-                    </div>
-                    <p class="lead">30DaysCoding.com</p>
-                    <p>Coding interview website</p><br>
-                </div>
-
-                <!-- Portfolio Item 8 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal10">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/589.png" alt="589">
-                    </div>
-                    <p class="lead">CS589 Projects</p>
-                    <p>Machine Learning class</p><br>
-                </div>
-
-                <!-- Portfolio Item 7 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal9">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/TuneRater.png" alt="TuneRater screenshot">
-                    </div>
-                    <p class="lead">CS326 Projects</p>
-                    <p>Web Development class</p><br>
-                </div>
-
-                <!-- Portfolio Item 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/SearchAgents.png" alt="Gridworld screenshot">
-                    </div>
-                    <p class="lead">CS383 Projects</p>
-                    <p>Artificial Intelligence class</p><br>
-                </div>
-
-                <!-- Portfolio Item 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/MathBot.png" alt="Screenshot of command line program">
-                    </div>
-                    <p class="lead">CS230 Projects</p>
-                    <p>Computer Systems Principles class</p><br>
-                </div>
-
-                <!-- Portfolio Item 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/Walle.png" alt="Screenshot of image processing program">
-                    </div>
-                    <p class="lead">CS220 Projects</p>
-                    <p>Programming Methodology class</p><br>
-                </div>
-
-                <!-- Portfolio Item 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/Pente.png" alt="Pente game screenshot">
-                    </div>
-                    <p class="lead">Pente</p>
-                    <p>Collaborating on in-browser Pente game</p><br>
-                </div>
-
-                <!-- Portfolio Item 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/RPGChess.png" alt="RPGChess screenshot">
-                    </div>
-                    <p class="lead">RPGChess</p>
-                    <p>RPG themed chess-like game in Java</p><br>
-                </div>
-
-                <!-- Portfolio Item 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/HackUmassVI.png" alt="Hack Umass app screenshot">
-                    </div>
-                    <p class="lead">Hack Umass VI</p>
-                    <p>Remote light switch application in Java</p><br>
-                </div>
-
-            </div>
-            <!-- /.row -->
-
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="page-section portfolio" id="portfolio" style="margin-top: -110px;">
-        <div class="container">
-
-            <!-- Portfolio Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Design/Video Portfolio</h2>
-
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <!-- Portfolio Grid Items -->
-            <div class="row">
-
-                <!-- Portfolio Item 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal12">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white">
-                                <i class="fas fa-plus fa-3x"></i>
-                                <p>MORE INFO</p>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="./img/portfolio/NACAMYefim.png" alt="Nacam Logo">
-                    </div>
-                    <p class="lead">NACAM Work</p>
-                    <p>Videos and graphics from NACAM</p>
-                </div>
-
-            </div>
-            <!-- /.row -->
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center" style="
-    box-shadow: 0px -4px 4px 2px rgba(1, 1, 1, 0.3);
-">
-        <div class="container">
-            <div class="row" style="padding-left:50px;padding-right:50px;">
-
-                <!-- Footer Location -->
-                <div class="col-lg-43 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
-                    <p class="lead mb-0">School Year Address: Amherst, MA 01002</p>
-                    <p class="lead mb-0">Home Address: N. Andover, MA 01845</p>
-                </div>
-
-                <!-- Footer Social Icons -->
-                <div class="col-lg-43 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Other Sites</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yshneyderman/">
-                        <i class="fab fa-fw fa-linkedin-in"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/yshneyderman">
-                        <i class="fab fa-fw fa-github"></i>
-                    </a>
-                </div>
-
-                <!-- Footer About Text -->
-                <div class="col-lg-43">
-                    <h4 class="text-uppercase mb-4">Contact</h4>
-                    <p class="lead mb-0">Feel free to send me a message on LinkedIn or email me at yshneyderman@umass.edu
-                </div>
-
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 35px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                In CS 121 we learned how to make GUI's in Java using Javax.swing and Java.awt. This exposure, plus my previous experience and interest in graphic design brought up a big interest in making something from scratch using these libraries.<br><br>
+                RPGChess is a game that I am working on independently to be similar to chess (a beloved classic) that I wanted to make more complex and modern.<br><br>
+                The game features 5 selectable classes (caster, ranged, warrior, rogue, and champion) and 15 different playable characters for a player vs. player turn based chess-style RPG game. <br><br>
+                Upon starting a game, they are loaded into the board where they can be moved certain amounts of spaces and attack in specific patterns with specific damage. Winning a match gives the winner and their heroes experience to level up their damage and abilities. In the future, I would like to go back and redo some of the structures with my more advanced knowledge of these concepts and add more ability types, player profiles, and an AI player.<br><br>
+                Eventually I would like to recreate this game in an actual game development platform as a side project - something like Unreal or Unity<br>
+              </p>
             </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- Copyright Section -->
-    <section class="copyright py-4 text-center text-white">
-        <div class="container">
+      <div id="HackUmassVI" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('HackUmassVI')" onmouseout="unshadow('HackUmassVI')" onclick="modal('HackUmassVIModal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">Hack UMass VI</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Team Hackathon project for Hack UMass VI of a remote light switch device and application for UMass students.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Oct 2018</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" width="35px"/><span class="tooltiptext">Java</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
+      <div id="HackUmassVIModal" class="modal">
+        <div class="modal-content" style="height:535px; text-align:center; width:950px">
+          <span class="close" id="HackUmassVIModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">Hack UMass VI</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 40px; background-color:#CCF0FF;">
+              <img src="Images/HackUmassVI.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Mock app background</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                Worked with a small team of computer science and computer engineering students to design a remote light switch and curtain opener with desktop application in Java to help make dorm life easier for UMass students. Led the development of the GUI and attempted to link the application over Bluetooth to a Raspberry Pi operating the motor.<br>
+              </p>
+            </div>
+        </div>
+      </div>
+
+    
+      <div id="Nacam" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('Nacam')" onmouseout="unshadow('Nacam')" onclick="modal('NacamModal')">
+        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">North Andover CAM</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Volunteer Projects for North Andover Community Access and Media.</p><br>
+        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Apr 2020</p><br>
+        <div style="float:right;position:absolute;bottom:10px;right:17px">
+          <div class="tooltip"><img src="https://img.icons8.com/fluent/48/000000/adobe-creative-cloud.png" width="35px"/><span class="tooltiptext">Creative Cloud</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-photoshop.png" width="35px"/><span class="tooltiptext">Photoshop</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-illustrator.png" width="35px"/><span class="tooltiptext">Illustrator</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-premiere-pro.png" width="35px"/><span class="tooltiptext">Premiere Pro</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-audition.png" width="35px"/><span class="tooltiptext">Audition</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-after-effects.png" width="35px"/><span class="tooltiptext">After Effects</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/final-cut-pro-x.png" width="35px"/><span class="tooltiptext">Final Cut Pro</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-lightroom.png" width="35px"/><span class="tooltiptext">Lightroom</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-xd.png" width="35px"/><span class="tooltiptext">XD</span></div>
+          <div class="tooltip"><img src="https://vignette.wikia.nocookie.net/logopedia/images/1/1e/Adobe_Media_Encoder_%282012-2013%29.png/revision/latest/scale-to-width-down/340?cb=20160228175700" width="27px" style="margin-bottom:3px"/><span class="tooltiptext">Media Encoder</span></div>
+          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/adobe-indesign.png" width="35px"/><span class="tooltiptext">InDesign</span></div>
+        </div>
+      </div>
+
+      <div id="NacamModal" class="modal">
+        <div class="modal-content" style="height:850px; text-align:center; width:950px">
+          <span class="close" id="NacamModalClose">&times;</span>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">NACAM</p>
+            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 60px; background-color:#CCF0FF;">
+              <img src="Images/NACAMYefim.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
+              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Picture of me directing a football game.</p> 
+            </div>
+            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
+              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
+                <a href="https://northandovercam.org/">NACAM Website</a><br>
+                <a href="https://www.youtube.com/channel/UC13W-m9GqbT1miA6x_5oaaw">NACAM YouTube</a><br><br>
+                The North Andover Community Access and Media is an organization that produces community access programming on the Public, Education, and Government access channels in North Andover. The organization's members are able to use studio equipment for productions to be featured on the channels as well as have access to trainings and assist in real productions that the studio helps out with around town such as sporting events, concerts, town meeting, festivals, etc.<br><br>
+                I joined NACAM in October 2013 and in my time in High School I accumulated the most volunteer hours over any other member and spent a lot of time learning software and techniques listed in my skills section. As a member I volunteered at a lot of NACAM productions in a variety of roles such as cameraman, director, technical director, audio, equipment setup, floor director, lighting, editor, etc. I worked with employees at NACAM to film community events linked below:<br><br>
+                  <a href="https://www.youtube.com/watch?v=rZrBxhH-jTo">8568F VEX Robotics Worlds Reveal 2017</a><br>
+                  <a href="https://www.youtube.com/watch?v=KHIBS7pYK-k">Mr. North Andover 2017</a><br>
+                  <a href="https://www.youtube.com/watch?v=fYVrW_1jExI">Spring Concert 2016</a><br>
+                  <a href="https://www.youtube.com/watch?v=w2XbsMBFklc">Spring Concert 2015</a><br>
+                  <a href="https://www.youtube.com/watch?v=4a-HMKvGnJE">Winter Concert 2016</a><br>
+                  <a href="https://www.youtube.com/watch?v=-iRlHl_BANo">All Town Band Festival 2016</a><br>
+                  <a href="https://www.youtube.com/watch?v=BrskaRoJR6A">North Andover Football Games</a><br>
+                  <a href="https://www.youtube.com/watch?v=nfJPpJNsgRs">North Andover Town Meeting 2017</a><br>
+                  <a href="https://www.youtube.com/watch?v=Y0CYsUPCaAc">North Andover Santa Parade 2019</a><br>
+                  <a href="https://www.youtube.com/watch?v=-BgGIh3Zzyc">Santa Call In Show</a><br>
+                  <a href="https://www.youtube.com/watch?v=YOqtEbGjChw">The North Andover Journal</a><br><br>
+                These links represent a small amount of the work that is available on YouTube. I volunteered at a variety of these sorts of events as well as helping out with Youth Programs and other smaller projects around the town.<br>
+              </p>
+            </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Portfolio Modals -->
-
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hack Umass VI</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/HackUmassVI.png" alt="hack umass app image">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Worked with a small team of computer science and computer engineering students to design a remote light switch and curtain opener with desktop application in Java to help make dorm life easier for UMass students. Led the
-                                    development of the GUI and attempted to link the application over Bluetooth to a Raspberry Pi operating the motor.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">RPGChess</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/RPGChess.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Uses java.awt and javax.swing as GUI. RPGChess is a game that I am working on independently to be similar to chess (a beloved classic) that I wanted to make more complex and modern.</p>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/TeamSelect.PNG" alt="">
-                                <p class="mb-5">
-                                    The game features 5 selectable classes (caster, ranged, warrior, rogue, and champion) and 15 different playable characters for a player vs. player turn based chess-style rpg game. Players will select which pieces they want to use in the game and play
-                                    an opponent to level the pieces up and unlock improved stats and abilities. In the game, move your pieces around the board on your turn and attack your opponent's pieces until they have none remaining.</p>
-                                <button class="btn btn-primary" onclick=" window.open('https://github.com/yshneyderman/RPGChess','_blank')">
-                  <i class="fab fa-fw fa-github"></i>
-                  GitHub Repository
-                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Pente</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/Pente.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Collaborating on a web browser Pente game in Javascript</p>
-                                <button class="btn btn-primary" onclick=" window.open('https://github.com/aryansingh12/Pente','_blank')">
-                  <i class="fab fa-fw fa-github"></i>
-                  GitHub Repository
-                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS220 Projects</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/Walle.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Image Manipulation</p>
-                                <p class="mb-5">2 Projects for CS220 to implement image manipulation methods in JavaScript to blur images, filter by color channel, highlight edges, black and white, etc. First implemented through arrays and then redone with higher order
-                                    functions like Map, Filter, and Reduce.</p>
-                                <p class="mb-5">Matchmaking</p>
-                                <p class="mb-5">Project for CS220 to use JavaScript to implement and test the stability of the Gale-Shapley matchmaking algorithm on a set of companies and candidates based on their preferences. Created tests to confirm the stability of
-                                    the algorithm and that it returns correct result.</p>
-                                <p class="mb-5">Data Wrangling with JSON</p>
-                                <p class="mb-5">Project for CS220 to use topics learned in class such as fluentfilters and higher order functions to create a filering tool for restaurants in the Yelp dataset in JSON format. Created tests to ensure successful return for
-                                    each function.</p>
-                                <p class="mb-5">Interpreter</p>
-                                <p class="mb-5">Project for CS220 to write a basic interpreter for a small amount of JavaScript in JavaScript. Were provided a parser function and implemented functions for evaluating expressions such as addition, subtraction, multiplication,
-                                    boolean expressions, etc. Interpreter also works for basic blocks, statements, and mini programs.</p>
-                                <p class="mb-5">Rapidly-Exploring Random Trees</p>
-                                <p class="mb-5">Project for CS220 to implement helper functions in JavaScript to assist a RRT algorithm in finding collision-free paths in 2-dimensional space.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS230 Projects</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/MathBot.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Connect Four</p>
-                                <p class="mb-5">Project for CS230 to implement a connect four game in C and create a simple AI to play against the player. Used a variant of the Min-Max algorithm to determine AI moves based on the board state and selected most optimal
-                                    move. Printed formatted board to console after every move and saved moves to history.</p>
-                                <p class="mb-5">Text Adventure</p>
-                                <p class="mb-5">Project for CS230 to implement a text adventure game in C in a group of 3. Created a map with the objective of visiting each room and using an item to solve the bigger puzzle and win. Used data structures in C to implement
-                                    rooms and items and makefile to easily recompile code.</p>
-                                <p class="mb-5">WordFreak</p>
-                                <p class="mb-5">Project for CS230 to create a program in C to parse through large text files and count/store how many times every word appeared in the text and then print the totals to the console. Made use of File IO and limited System
-                                    Calls as well as environmental variables, piping, command line arguments, and keeping track of memory usage.</p>
-                                <p class="mb-5">Threads and Synchronization</p>
-                                <p class="mb-5">Project for CS230 to implement a program using threads and semaphores in C to simulate a ticket ordering call center with 5 lines and 3 operators so that any number of callers can call and wait until they connect to operator
-                                    and buy a ticket.</p>
-                                <p class="mb-5">Math Bot</p>
-                                <p class="mb-5">Project for CS230 to write a computer networking client to connect to remote server in C and automatically answer a series of math problems by sending and recieving problems and solutions to the server until we are sent
-                                    a flag that indicates the end of the program.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 9 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-labelledby="portfolioModal9Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS326 Project</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/TuneRater.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">TuneRater</p>
-                                <p class="mb-5">A website where aspiring musicians can upload their music and other users can provide ratings, critiques, and suggestions for how they can improve. It features an improved feedback system to have more relevant feedback
-                                    than YouTube and Spotify. This is much needed in a world where many artists upload their work to YouTube or Spotify and can't receive any helpful feedback short of internet harassment, likes, or simply getting ignored.
-                                    This will provide a platform for serious artists to get useful critiques of their music so that they may improve their skills and learn from others and create a community of such work.</p>
-                                <p class="mb-5">A project for CS326. Worked in group of 4 to create a music listening and rating website using JavaScript, HTML, CSS, Node.js, MongoDB, Mongoose, Mustache templates to create a server and database to upload and store music
-                                    information.
-                                </p>
-                                <button class="btn btn-primary" onclick=" window.open('https://github.com/yshneyderman/326Project','_blank')">
-                  <i class="fab fa-fw fa-github"></i>
-                  GitHub Repository
-                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 12 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-labelledby="portfolioModal12Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">NACAM Work</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/NACAMYefim.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">NACAM Website: <a href="https://northandovercam.org/">https://northandovercam.org/</a></p>
-                                <p class="mb-5">NACAM YouTube: <a href="https://www.youtube.com/channel/UC13W-m9GqbT1miA6x_5oaaw">https://www.youtube.com/channel/UC13W-m9GqbT1miA6x_5oaaw</a></p>
-                                <p class="mb-5">The North Andover Community Access and Media is an organization that produces community access programming on the Public, Education, and Government access channels in North Andover. The organization's members are able to
-                                    use studio equipment for productions to be featured on the channels as well as have access to trainings and assist in real productions that the studio helps out with around town such as sporting events, concerts, town
-                                    meeting, festivals, etc. </p>
-                                <p class="mb-5">I joined NACAM in October 2013 and in my time in High School I accumulated the most volunteer hours over any other member and spent a lot of time learning software and techniques listed in my skills section. As a member
-                                    I volunteered at a lot of NACAM productions in a variety of roles such as cameraman, director, technical director, audio, equipment setup, floor director, lighting, editor, etc. I worked with employees at NACAM to film
-                                    community events linked below:</p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=rZrBxhH-jTo">8568F VEX Robotics Worlds Reveal 2017</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=KHIBS7pYK-k">Mr. North Andover 2017</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=fYVrW_1jExI">Spring Concert 2016</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=w2XbsMBFklc">Spring Concert 2015</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=4a-HMKvGnJE">Winter Concert 2016</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=-iRlHl_BANo">All Town Band Festival 2016</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=BrskaRoJR6A">North Andover Football Games</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=nfJPpJNsgRs">North Andover Town Meeting 2017</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=Y0CYsUPCaAc">North Andover Santa Parade 2019</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=-BgGIh3Zzyc">Santa Call In Show</a></p>
-                                <p class="mb-5"><a href="https://www.youtube.com/watch?v=YOqtEbGjChw">The North Andover Journal</a></p>
-
-                                <p class="mb-5"> These links represent a small amount of the work that is available on YouTube. I volunteered at a variety of these sorts of events as well as helping out with Youth Programs and other smaller projects around the town.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 11 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-labelledby="portfolioModal11Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">30DaysCoding</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/30Days.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">Check out the site here: <a href="https://30dayscoding.com/">https://30dayscoding.com/</a></p>
-                                <p class="mb-5">30DaysCoding is a fully free website that compiles interview questions, study guides, and tips to success on a technical interview in computer science and requires no account to sign up. </p>
-
-                                <p class="mb-5">In the modern world there are not a lot of easy to find and free resources for help in such areas and it can be difficult to figure out what you are missing if you don't know what to look for. 30DaysCoding features a simple
-                                    organization and easy to use UI that keeps users motivated to keep working with a day to day plan of topics to cover as well as an additional interview guide to help teach about the interview process. </p>
-                                <p class="mb-5">The site launched late March 2020 and has had several thousand pageviews. I am helping a peer, <a href="https://www.linkedin.com/in/aryansingh2/">Aryan Singh</a>, to work on the site and interview guides.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 10 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-labelledby="portfolioModal10Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS589 Projects</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/589.png" alt="">
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">A 500 level class covering Machine Learning topics. All assignments came with programming portion and written report to explain processes and provide analysis of topics learned. </p>
-                                <p class="mb-5">Regression</p>
-                                <p class="mb-5">Coding project and report on using and comparing different regression techniques on a .CSV dataset. Used python language and scikit-learn(sklearn) and numpy to test out Decision Tree, KNN, and Ridge/Lasso Linear models
-                                    for regression. Also used K-fold cross validation on MAE's to find and train best model to submit on Kaggle. Analyzed which criteria to look for when choosing a node to split in training a decision tree and analyzed
-                                    the runtime of cross validation </p>
-                                <p class="mb-5">Classification</p>
-                                <p class="mb-5">Used sklearn and Matplotlib to create Decision Trees, KNN, and Linear Model (hinge and logistic) for dataset. Wrote handwritten derivatives for autodiff in python and autograd to implement a Neural Network to plot Loss
-                                    vs Epochs of different hidden unit sizes</p>
-                                <p class="mb-5">Kernel</p>
-                                <p class="mb-5">Proved optimal w value for Kernel Ridge Regression and compared results to base expansion. Handwrote python code to compute KRRS vs BERR kernels for given polynomial and trigonometric kernels and compared resulting MSE.
-                                    Found highest values and submitted to Kaggle. Used sklearn KernelRidge to predict a housing dataset for RBF, Poly. Degree 3, and Linear models of different alpha and gamma values. Used K-Fold cross validation to find
-                                    best hyperparameters. Used sklearn SVM classifier to do the same for a coronavirus dataset to find best hyperparameters. Scored within top 18</p>
-                                <p class="mb-5">Bayesian</p>
-                                <p class="mb-5">Used Matplotlib and numpy to implement and compare Bayesian vs MAP estimates for dataset and write report why resulting MSE's were different</p>
-                                <p class="mb-5">Unsupervised</p>
-                                <p class="mb-5">Used Matplotlib, numpy, sklearn, scipy, and PIL to implement PCA and compress and decompress 100 face images and plot the respective reconstruction error. Also used K-means to compress a single image and compare how different values of k changed the appearance and compression rate</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CS383 Projects</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Image -->
-                                <img class="img-fluid rounded mb-5" src="./img/portfolio/SearchAgents.png" alt="Gridworld Screenshot">
-                                <p class="mb-5">Search Algorithms</p>
-                                <p class="mb-5">Project for CS383 to create agents to find a goal state on a gridworld graph using Breadth First Search, Depth First Search, Greedy Best First Search, Uniform Cost Search, A* Search, and compare the results.</p>
-                                <p class="mb-5">Minimax, Alpha-Beta Pruning, and CSP</p>
-                                <p class="mb-5">Project for CS383 to implement an AI in python to use the Minimax algorithm, depth limits, alpha-beta pruning, and several different heuristics to play Isola. Tracked runtime of the agents and win/loss ratios. Used python
-                                    constraint satisfaction problems to solve sudoku puzzles and course scheduling problems.</p>
-                                <p class="mb-5">Clustering and Classification</p>
-                                <p class="mb-5">Project for CS383 to use scikit-learn library in Python to implement k-means clustering on Congressional Votes dataset. Also created a classification program to build a tree based on the same dataset.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 7 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-labelledby="portfolioModal7Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="fas fa-times"></i>
-            </span>
-          </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Favorite Books</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">In no particular order:</p>
-                                <p class="mb-5">"Tiny Revolutions in Russia" - Bruce Adams <br> "1984" - George Orwell <br> "Animal Farm" - George Orwell <br> "Red Rising" - Pierce Brown <br> "Golden Son" - Pierce Brown <br> "Morning Star" - Pierce Brown <br> "Iron Gold"
-                                    - Pierce Brown <br> "Impact" - Douglas Preston <br> "Blasphemy" - Douglas Preston <br> "Gideon's Corpse" - Preston & Child <br> "The Hot Zone" - Richard Preston <br> "Jurassic Park" - Michael Crichton <br> "Timeline"
-                                    - Michael Crichton <br> "Prey" - Michael Crichton <br> "Airframe" - Michael Crichton <br> "The Andromeda Strain" - Michael Crichton <br> "Rising Sun" - Michael Crichton <br> "Micro" - Crichton & Preston <br> "Brave
-                                    New World" - Aldous Huxley <br> "The Hitchhiker's Guide to the Galaxy" - Douglas Adams <br> "The Trial" - Franz Kafka <br> "The Hobbit" - JRR Tolkien <br> "The Demon King" - Cinda Williams Chima <br> "The Exiled Queen"
-                                    - Cinda Williams Chima <br> "The Gray Wolf Throne" - Cinda Williams Chima <br> "The Crimson Crown" - Cinda Williams Chima <br> "Murphy's Law 26th Anniversary Edition" - Arthur Bloch <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 8 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-labelledby="portfolioModal8Label" aria-hidden="true" style="margin-left:17px !important">
-        <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">
-               <i class="fas fa-times"></i>
-             </span>
-           </button>
-                <div class="modal-body text-center">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <!-- Portfolio Modal - Title -->
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Favorite Films</h2>
-                                <!-- Icon Divider -->
-                                <div class="divider-custom">
-                                    <div class="divider-custom-line"></div>
-                                </div>
-                                <!-- Portfolio Modal - Text -->
-                                <p class="mb-5">It's my goal to watch all of the IMDB top 250... <br>In no particular order:</p>
-                                <p class="mb-5"> Schindler's List<br> The Lord of the Rings: The Fellowship of the Ring<br> The Lord of the Rings: The Two Towers<br> The Lord of the Rings: The Return of the King<br> The Hobbit: An Unexpected Journey<br> The Hobbit: The
-                                    Desolation of Smaug<br> The Hobbit: The Battle of Five Armies<br> The Green Mile<br> Enemy at the Gates<br> White Sun of the Desert (Russian: Белое солнце пустыни)<br> Das Boot<br> Ivan Vasilievich Changes Profession
-                                    (Russian: Иван Васильевич меняет профессию)<br> Diamond Arm (Russian: Бриллиантовая рука)<br> Kidnapping, Caucasian Style (Russian: Кавказская пленница)<br> Ip Man<br> Inception<br>Forrest Gump<br> The Matrix<br> How
-                                    to Steal a Million<br> Hereditary<br> Annihilation<br> One Flew Over the Cuckoo's Nest<br> Se7en<br> Les Intouchables<br> Aladdin<br> Leon: The Professional<br> The Truman Show<br> The Princess Bride<br> Les Anges Gardiens<br> Gladiator
-                                    <br> Law Abiding Citizen<br> Parasite (Korean: 기생충)<br> Constantine<br> Project Gutenberg (Chinese: 無雙)<br> WALLE<br> Contact<br> Bestseller<br> The Russians Are Coming, the Russians Are Coming<br> Coco<br> Up<br> Inglorious
-                                    Basterds<br> Good Will Hunting<br> Braveheart<br> Ivanhoe BBC Miniseries<br> Lawrence of Arabia<br> Some Like It Hot<br> Life of Pi<br> Namesake<br> The Shawshank Redemption<br> Get Out<br> Lincoln Lawyer
-                                    <br> Knives Out <br> Dunkirk<br> The Burbs<br> Batman Begins<br> The Dark Knight<br> The Dark Knight Rises<br> Children of Men<br> Stand Up Guys<br> The Good, the Bad and the Ugly<br> District 9<br> Interstellar<br>The 100-Year-Old Man Who Climbed Out the Window
-                                    and Disappeared<br> Elysium<br> Avengers: Infinity War<br> Avengers: Endgame<br> Thor Ragnarok<br> Pan's Labyrinth<br> V for Vendetta<br> Qu'est-ce qu'on a fait au Bon Dieu?<br> Fight Club
-                                    <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
-
+    
+    <div id="Experience" style="width:100%; text-align:center; float:left; padding-top:75px;">
+      <h1 style="font-size:2.3em; text-align: center">Experience</h1><br>
+      <div id="Nasdaq" style="max-width:1400px; z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 260px; margin-left:8px; margin-right:8px; margin-bottom: 30px; background-color:rgb(166,225,250);padding: 30px;">
+        <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQHZZNiT9xfBEQ/company-logo_100_100/0?e=1606348800&v=beta&t=QEO8i0MCKNsTie5Ger1w-qz6-iOHL7mVfV1ydnlJvC4" width="40px" style="float:left"/>
+        <p style="width:90%; float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600; padding-top:6px; margin-left:12px">Full Stack Software Engineering Intern</p><br>
+        <p style="width:90%;float:left;margin-top: 15px; margin-left:-40px; font-size:1.0em;color:#001C55;font-weight:600;">Nasdaq - Internship</p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Jun 2020 - Aug 2020 • 3 mos </p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">
+          Created Secure Multiparty Compute / Homomorphic Encryption proof of concept project with team at Nasdaq Boston Innovation Lab.<br>
+          Learned to use and work with React.js, PostgreSQL, Java Spring Boot, Kubernetes, Docker, Flask.<br>
+          Presented the project to Nasdaq Executives for evaluation on business promise and profitability for multiple use cases.</p><br>
+      </div>
+      <div id="Indigo" style="max-width:1400px; z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 285px; margin-left:8px; margin-right:8px; margin-bottom: 30px; background-color:rgb(166,225,250);padding: 30px;">
+        <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQE7u1eAXE-v-A/company-logo_200_200/0?e=1606348800&v=beta&t=lRMJJYdJ9lios_rlb__yh1VC2BxYf8qmK8ZixmcQu2I" width="40px" style="float:left"/>
+        <p style="width:90%; float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600; padding-top:6px; margin-left:12px">Independent Contractor / Laboratories & Facilities Intern</p><br>
+        <p style="width:90%;float:left;margin-top: 15px; margin-left:-40px; font-size:1.0em;color:#001C55;font-weight:600;">Indigo Ag. - Internship</p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Jun 2018 - Present • 2 yrs </p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">
+          Collaborated with environmental health and safety consultants, and managers to create educational multimedia content for Indigo’s online safety training site. Launched the platform to track user progress and ensure OSHA compliance.<br>
+          Used technology skills to work on projects regarding office security, training employees, asset tracking, seating, etc.<br>
+          Created pages, filters, maps, graphics, and SOP’s for a variety of tools used by the team including JIRA, OfficeSpace, Simpplr, SharePoint, and assisted in regular Lab & Facilities duties.</p><br>
+      </div>
+      <div id="NAPS" style="max-width:1400px; z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 275px; margin-left:8px; margin-right:8px; margin-bottom: 30px; background-color:rgb(166,225,250);padding: 30px;">
+        <img src="https://sites.google.com/a/northandoverpublicschools.com/beta2/_/rsrc/1580145619011/resources/brand-guide/NA-letters-LOW.png?" width="40px" style="float:left"/>
+        <p style="width:90%; float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600; padding-top:6px; margin-left:12px">IT Support Analyst / Auditorium Technician</p><br>
+        <p style="width:90%;float:left;margin-top: 15px; margin-left: 0px; font-size:1.0em;color:#001C55;font-weight:600;">North Andover Public Schools - Summer Job / School Aide</p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Sep 2015 - Aug 2017 • 2 yrs </p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">
+          Led a small team to provide technical support for classrooms and school equipment.<br>
+          Worked independently and in small teams on lighting, sound, and stage for events in the auditorium. <br>
+          Worked with IT managers and learned about troubleshooting, researching, and repairing issues in computer software, hardware, printers, cables/wiring, and projectors. Occasionally took over core duties in their absence.</p><br>
+      </div>
+      <div id="NACAM" style="max-width:1400px; z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 255px; margin-left:8px; margin-right:8px; margin-bottom: 30px; background-color:rgb(166,225,250);padding: 30px;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAn1BMVEX///8mOlPNzc0vQ13KysrOzs7W1dTf39/o6OgaMk3R0dAiN1HV1NPa2toKKUf6+vodNE/z8/MSLUrn5+cLKkgAJUUAHT/09PQAGz4AJkacoKbDxMUAI0SlqK1+hI6LkJi5u77LztNxeoiEjJe5vcOvsbUAFzxRXW6ipqtha3kuQVhFU2YZNFNtdoQ9TGGssbmQl6FBUGVZY3NMWm4ACTaEH+L0AAAMzElEQVR4nO1daXuqyBIOKqiAqIge4x7NptFEk/v/f9sFxIWi9y7AeR7eDzPnzCjtS1fX1tVdT08VKlSoUKFChQoVKlSoUKFChQoVKlQoA91+vzUYNDsd1zXNxgU102q2/pX923TRbTXd2oURAY2G2Sr7N2qgO7DJvNIkrbJ/pyq6HQF6McVO2T9VDR0xejHFbtk/VgEtHj8zgn2Gmdev6IYqrt+6IvxLF+tl0icwYuVall2brlZv88nkuFwuFsflZrM5Hic/ry8DFOX6r9Xs2LUGETXbag76mkz7RIJmSM1ezZeL7deu5wdeEPi+344Q/zP8S+ANZ7P2aT15HagP3h24NM19Wxfh/+/oKHEiPWs6WX8Pn0M2PccxGHDavjcaf21eVX5CX0R9X2gqc2xmxrCt1WI39HtMZpCnNzbWsiyzQzM5KsrqPziKac2/ntsS7O5Yjr6PEsZEQoHHUDTFNiQ4/fIU6F1Y+jPj2MyHYK2hpNcyhsI69ZT5JSTHX68CI8uJaAwlZwM+xF0GegRjkkPnhTfwQJ5graFAEI5jNp71CUYcfc7AXCeDyFBBnWZkdKspoxc8swWVbIO5kNc1cC2YbzhTaBi9LWvcrhpBeYORGcg6qatRgBlL8ZlqBOXFFE6h/elhEWSKqaU4hfJimpnCHdoUGu218IuVgKQ2hYrUniBYigucHm1YRS1zZtiXYpjnFBrGiOLaqGqZMwT9pTOgSbI/EafQMPxP8rDQTZSDVPwNFRqiIo3Q+yWOqrEII8jYC7gczDc8RRrjXWRUaYYS9qIDvmv9IrkzFwxJvqkmQRnvGy54c4rlzlzgH7OjWroEazVhhhlTsWgjM3ROmUGV/O00xBci1DMusoyGmEHjpWcoEoaiCxEmL5BNRYyM4+bqExRfiE3wPesD1VTEaG/SY6oEvVmIWkT4NaTINwVnlxoSQ0ZrwgsRmiV7ia1nIoxSawZBj8YMxVzTjJDi+jMJgh/GS1VmKOaagm/hG8MYvQN9SBJM23Vt07Zcpu8qFCMWI6ThJN5JDXcKTWu1+a3v9/vT+tNmcRRhCIezvvIQ0tAiXlU7X81Yq9+9UY9h7I2lTc10CKka8IZyEtLQcZtcRoReMIRprff1O+y/V7RpFLH58IXaRz8fhs5XMmJmdwQStP+cehr+nOIgiKga6B6ihxVXjJOMG89S2H9GHSJ4o8yigKqBImMjR4Y3eK9CU2gd4AzGkjqlrEU+Q/AF8w3fJ02QZNw4q9B+2xMI1usf5Knnq5rMMkQPnO4okgbMTOGJSLC+nxPllO/VZJbhdz62IkJsLzi20KRMIW0SG9y6ASAzZiO3ZZgE+pwpdA9ZNZPoU/JK5AZQ4Fv2PCdbESEK9HmRvUXhV687E6KY2g+0DEN70eLtw5gNmpDWjQV5IXIYQqc0L5ftjOCHp2fMFZ3hgWj1ecoUrHvTzFFIo8TwgE2QyXBLZshRpkA/oWeCAWYNnpTKzyHHM804pXkuw8j75uxUsNbhhvxdtmcKl4V7yMspPcP55TmldF26/yQzZHumGUWTo72P4dU4YmqvafZwT5Fwdr5tABVNvstQREypC3FLmX62uWjCx+fNsMcX0z/KFL5RZp9tLoB2sie5GosIPk9MKZNo0KaQYy7Ah/P1aM4MeWJaczckigb1zbDNBVSlucX3V/DFtGZtsxT31EwNO5EBw+0OankCGQHP6EdRPqBoGHSC7Ogikyod5k5QQExDipP9vc3YfzRY33EZDKGxyCuReA/nT2DPwm6s986ZpLE/zS3mtLMMIvS733JXpSFmtJxS6qe45uf677t+2i5XFmfSWQYRBPgFGIsQ7aVQFU10AiKES893XxkyDCKQF3uTu7Ewop1EpK21K0NG5SN4mXn73Qk8mneiypBh8sFH89jdJqC3RtnDvzFkmHwYWRRgDiO0keeQnlDMRIfFEBQyiTKgOzXApTFrRahSQ9AkSoDu1PShwc87drpguEKVU7pTAxnmHh1e0F6g6hp6UrgFXZrctp0gfFxtKsow14w+YIiqa+huG2RYiNMWwzlh6hq62wZCi9x28AnwMHWNOMOcCmlI6FHTLioMqY4pZFiI453AE4mhRBlSHVOQSywgD3UDpsGgO6ZlMjR8PG0qzNBdFxI8XRiKBcK4DIsJDxM4BpquoQcXpTJEtPr0jGm5DJ1vrEl8VIZGQNkQRGQI7GHRDPEmkRoglszQ8MiFXDkyLNRaGIiTKMqwWIsfAWslUhnC6KlwhljJYWqxAmRYpOd9BpJNpDLslxc9JXCMYhkWGAFfgOOdCjMsLotxR5FXuaDFEGSE7c8SGLYxNjGoDEFW3y4um3gHoQ1TJIYF5kvvIFCcoc7wqaycdwrPtMMiGAzTnytu3yIFBN+NvjUDGDbKkNLQdzvqTiKdITy2VoIujdDWtRh0hrBwr+DY4spwrSmndIbgwVY5BEOLoZnjp28Cg3qaovbxM3C+tCaRUbsHEjX5HrZgIdCKMVgM0wbR+i2LoZ6yYRRjwDQG1iV7CgwPGnLKYNgqOVFzh6GGZ8MoGSo9jXGDTkKDwbD8IP8GX327jVHYBgPEMkLgK56VjSKDIQwQywiBr1A3iqzyy0cIEK8IjopyyiqhfYgA8QrVvX0Ww/QnzWkBtfoMqFb0sQq9gQ0q4jQCC6qRIoMhDC7K1DQRKCfSOWAdR3iU4OKCnpKcso6UQNf7r2SGavqUdSzocVzvC54V5JR1tAs6piW63gkU7D7z8NojOaYJ/I2snDIPIEK3rVTHNIG0fypzxLLAKmE6nJ2kUWQfk4VuWwHH87iQjffZR53TApHLnZDyGMpVobCPq4O35ZavaSK0+Sdp7+eFyRDmE/O+U0EMPcq1V2SwXJqsyc//MLcQgqWEyWDfo/RAuagUZqzD22lwrt2DmZoHMPkxHIN/OvbCkH1BDTT52gZxh/SK2sLHFXiXDKU/rZ3HcD6winK8ieBS5F0UlX6MaepOQfBkIKljYe+NTTATA+uai/HTyxiHoaj3xruwDTtCHA2eFkhyKrgUeZfuwfhJtz4xaoIg02iPBU8k4OdenIitTIPXJzQ5DZciX1D5l1+mP69dUxP3W1kjyaljmFp3RpwBBEG3LUJ8f35XpWUiCQIOKr8nEvS9NXe6zx3IXkY4DA1/wb05i8sQuRQ66RCwxvL+eLGiwGXQmRJMzTXknZ+KJae8NLjIhd7wYgXNvYvRWbeh6VPnm2kyRC5lh3sXmp0RLpfLo8kpx/DzCWKfK0lu7UaU02DJoCjShwXeHaG5EezPk+ei6VNWJQr/KugI8EozPVVzayiDJqcMbSPWNBcuRD3n+67FGpqchmEGjaIIwcxC1Evt37XMQdOnRptW7i7WDgmW7GsWQ3s3/Y0VR1F9G9GWVkACNB230d3iZ7dil8EzMakh2pYM3jygJ6b3bfLw5JQcSfHi+wsyF0RqMbyaiwh4cur0sql+MVsRAXxRrwoz3X8MKy9FdN/EG6xnrhPW8U3THTk771gMCQpVvBEpvKlVq+DbcVLPxujPngAqVHEhJfSA0MlljNOZE8QaHaBQZTqtwl59WqVDoOdoE0+fGrOUhyrVthqzo3Oqh1yICWLF472HKtfTGTbwcTUmETZzfDrhbUo6u1v2TarhMaFRp/qLvzbnuqCFKKe9r8tSlNEzEaCt0VGnY/jwnxkexVvIL0cw29VZwyaOM/7wL+LGa3C2GTINnSmTeFD+VVmG/zALyM82Q24VEiexpqwfCE24p4hLMXbC5RQpeRLtT8XyIUL/ZkwXPITf4PReISPT087aqsmp90N6PGb5sbOTMvZXQJto2koBLPBLL2iipd5C/I/Uqp2PTLcp+01Fy79TRp/jmYz3OXkILjKdpF2FwOCdKKMRtli7imPY41scmSDakv1VvRFj9BMKRX+nomUSZBtoulsZ782ZfTDt8K9+cWd7vFTn90Rqv2gdh6IatTfbTTnPn7zrOeH++1ralQHIppbtxjrwuTrVaXuzg4CCa23Hqq6S0x76RwU7D0Bo9Gq6jeOHH7R7RNvh9HptfzbaLV5FU5cbfyaf7u/5M2ehZiIgMvo0NoxW7W15+Nv5zyG8CM/xnwLP2X0cNj8vcq/2ZXkaz6JXJjZ1vjf2t59i+XsRWMQejGbcMsSuTVcJptMGr20dC93Oz+bwHYxGo1n0pgLf99tn9M7/Cv+D581Go/bf4vNFd+0BsLbNzRSkUkFEdPuDzsv09fVnPjkuN4vF+ozFYnOc/Ly+dFq6A5BHZTCE0LBMZaIrXijPL9d5UJDXIolhLlJUBFqmGEfxjYPHQ79pN2Kw+DXwVHg5+NdqDZo3dCJYluu6tmm6rtUZ/IdnsEKFChUqVKhQoUKFChUqVKhQoWT8H9XuQJDIckq/AAAAAElFTkSuQmCC" width="40px" style="float:left"/>
+        <p style="width:90%; float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600; padding-top:6px; margin-left:12px">Volunteer / Youth Representative</p><br>
+        <p style="width:90%;float:left;margin-top: 15px; margin-left: -40px; font-size:1.0em;color:#001C55;font-weight:600;">North Andover Community Access and Media - Volunteer</p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Oct 2013 - Present • 7 yrs </p><br>
+        <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">
+          Led and assisted in community film events and projects at the tv station.<br>
+          Received training and experience working with professional video-editing/related software and equipment.<br>
+          Elected Youth Representative to work with staff to develop programs for youth members</p><br>
+      </div>
+  </div>
 </body>
+
+<script>
+  let mainNav = document.getElementById("js-menu");
+  let navBarToggle = document.getElementById("js-navbar-toggle");
+
+  navBarToggle.addEventListener("click", function() {
+    mainNav.classList.toggle("active");
+  });
+</script>
+
+<script>
+  function shadow(id){
+    let div = document.getElementById(id);
+    div.style.boxShadow = "0 4px 9px 0 rgba(0, 0, 0, 0.2)";
+  }
+
+  function unshadow(id){
+    let div = document.getElementById(id);
+    div.style.boxShadow = "";
+  }
+
+  function expandEducation(){
+    let div = document.getElementById("caret");
+    let elements = document.getElementsByClassName("course");
+    if(div.innerHTML === '<i class="fa fa-caret-down" aria-hidden="true"></i>'){
+      div.innerHTML = '<i class="fa fa-caret-up" aria-hidden="true"></i>';
+      for(var i=0; i<elements.length; i++) {
+        elements[i].style.display = "inline-block";
+      }
+    }
+    else{
+      div.innerHTML = '<i class="fa fa-caret-down" aria-hidden="true"></i>';
+      for(var i=0; i<elements.length; i++) {
+        elements[i].style.display = "none";
+      }
+    }
+  }
+</script>
+<script>
+  let list = document.getElementsByClassName("modal")
+  for(let i = 0; i < list.length; i++){
+    list[i].style.display = "none";
+  }
+  function modal(id){
+    console.log(id);
+    var modal = document.getElementById(id);
+    console.log(modal);
+    // Get the button that opens the modal
+    var btn = document.getElementById(id+"Button");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementById(id+"Close");
+    console.log(span);
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks the button, open the modal 
+    modal.style.display = "block";
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  }
+</script>
+
 
 </html>
