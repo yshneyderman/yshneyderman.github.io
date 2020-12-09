@@ -76,13 +76,65 @@ body {
   font-weight: 650;
 }
 
+.image{
+  width:100%;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.subimage p{
+  text-align:center;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+.bio{
+  width: 100%;
+  float: left;
+  padding-right: 40px; 
+  padding-left: 40px; 
+}
+
 @media screen and (min-width: 1500px) {
   .nav-links {
     font-size: 0.95vw;
   }
+  .image{
+    width:40%;
+    float: left;
+    margin-top: 0px;
+  }
+
+  .bio{
+    width: 60%;
+    float: left;
+    padding-right: 120px; 
+    padding-left: 40px; 
+  }
+
+  .subimage{
+    float:right;
+  }
 }
 
 @media screen and (min-width: 800px) {
+  .image{
+    width:40%;
+    float: left;
+    margin-top: 0px;
+  }
+
+  .bio{
+    width: 60%;
+    float: left;
+    padding-right: 120px; 
+    padding-left: 40px; 
+  }
+
+  .subimage{
+    float:right;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -232,19 +284,19 @@ body {
   </nav>
   </div>
 </div>
-<div style="padding-top: 100px; margin-right: 40px; margin-left: 40px;">
-  <div style="width: 40%; float: left;">
-    <div style="float:right;">
+<div style="display:inline-block; padding-top: 100px; margin-right: 40px; margin-left: 40px;">
+  <div class = "image">
+    <div class = "subimage">
     <img src="profilewhiteorigcolorcorrected.png" width="300px" style="margin-left: auto; margin-right: auto; display: block; margin-top:100px;">
     <p style="text-align:center;padding-top:20px; font-size:0.95em;color:#001C55; padding-right: 70px; padding-left: 70px; max-width:500px" >Presenting at ULaunch business startup competition, 2020</p>
     </div>
   </div>
-  <div style="width: 60%; float: left;margin-top:20px; font-size:1.2em;color:#001C55; padding-right: 120px; padding-left: 40px; max-width:900px;">
+  <div class = "bio" style="display:inline-block; margin-top:20px; font-size:1.2em;color:#001C55; max-width:900px;">
     <h1 style="font-size:2.3em; text-align: center; min-width: 330px">Yefim Shneyderman</h1><br>
-    <p style="margin-bottom:12px; min-width: 330px">I'm a student at the University of Massachusetts Amherst pursuing my master's degree in Computer Science.</p>
-    <p style="margin-bottom:12px; min-width: 330px">As a student I am very passionate about learning and love using technology to solve problems around me.</p>
-    <p style="margin-bottom:12px; min-width: 330px">I'm very interested in learning about and working on software engineering/development, security, artificial intelligence/machine learning, sustainability, and UX/UI design. I am seeking internships to help gain some more useful skills and contribute to the world.</p>
-    <p style="margin-bottom:12px; min-width: 330px">In my free time I like coding, hiking, painting, listening to music, reading, swimming, badminton, and watching my favorite movies/tv shows.</p>
+    <p style="margin-bottom:12px; min-width: 450px">I'm a student at the University of Massachusetts Amherst pursuing my master's degree in Computer Science.</p>
+    <p style="margin-bottom:12px; min-width: 450px">As a student I am very passionate about learning and love using technology to solve problems around me.</p>
+    <p style="margin-bottom:12px; min-width: 450px">I'm very interested in learning about and working on software engineering/development, security, artificial intelligence/machine learning, sustainability, and UX/UI design. I am seeking internships to help gain some more useful skills and contribute to the world.</p>
+    <p style="margin-bottom:12px; min-width: 450px">In my free time I like coding, hiking, painting, listening to music, reading, swimming, badminton, and watching my favorite movies/tv shows.</p>
     <div style="text-align:center; margin-top:25px;">
       <div id="movies" style="z-index: 0;text-align:center; display: inline-block;position:relative; width:230px; height: 50px; background-color:#CCF0FF;padding:10px;cursor: pointer;" onmouseover="shadow('movies')" onmouseout="unshadow('movies')" onclick="modal('moviesModal')">
         <p style="font-size:0.9em;color:#001C55;font-weight:600">Favorite Films / TV</p><br>
