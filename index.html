@@ -366,7 +366,27 @@ body {
 
   <div id="Education" style="width:100%; text-align:center; float:left; padding-top:75px; margin-top:-30px; margin-bottom:-70px;min-width:600px">
     <h1 style="font-size:2.3em; text-align: center">Education</h1><br>
-    <div id="UMass" style="max-width:1400px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 240px; margin-left:10px; margin-right:10px;background-color:rgb(166,225,250);padding: 30px;min-width:600px">
+    <div id="UMass2" style="max-width:1400px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 180px; margin-left:10px; margin-right:10px;background-color:rgb(166,225,250);padding: 30px;min-width:600px">
+      <img src="https://img.icons8.com/windows/64/000000/university.png" width="30px" style="float:left"/>
+      <p style="width:90%; float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">University of Massachusetts Amherst</p><br>
+      <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Master of Science</p><br>
+      <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:600">Computer Science</p><br>
+      <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">Awards: Bay State Scholars Scholarship</p><br>
+    </div>
+    <div id="UMassClick2" style="max-width:1400px;min-width:600px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 45px; margin-left:10px; margin-right:10px;background-color:#CCF0FF; margin-bottom:0px; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;" onclick="expand('masters')" onmouseover="shadow('UMassClick2')" onmouseout="unshadow('UMassClick2')">
+      <p style="width:50%; float:left; font-size:1.0em;margin-left:4px;color:#001C55;font-weight:600">Coursework</p>
+      <div id="caretmasters"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+    </div>
+    <div id="Courses" style="max-width:1400px;display: inline-block; z-index: 0; text-align:center; position:relative; width:90%; margin-left:10px; margin-right:10px;padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; margin-bottom:20px;">
+      <div class="coursemasters" style="display:none; z-index: 0; text-align:left; margin-bottom: 10px; position:relative; width:100%; background-color:#e4f7ff; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;">
+        <p style="font-size:0.9em;color:#001C55;font-weight:400">
+        <b>CS515: </b>Algorithms for Data Science,
+        <b>CS574: </b>Intelligent Visual Computing: A Neural Network Approach,
+        <b>CS590J: </b>Cyber Effects: Reverse Engineering, Exploit Analysis, and Capability Development
+      </div>
+    </div>
+
+    <div id="UMass" style="max-width:1400px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 230px; margin-left:10px; margin-right:10px;background-color:rgb(166,225,250);padding: 30px;min-width:600px">
       <div style="float:right;position:absolute;top:30px;right:40px"><p style="font-size:1.1em;color:#001C55;font-weight:600">GPA: 3.882</p></div>
       <img src="https://img.icons8.com/windows/64/000000/university.png" width="30px" style="float:left"/>
       <p style="width:90%; float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">University of Massachusetts Amherst</p><br>
@@ -375,13 +395,14 @@ body {
       <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">Awards: Dean's List, Cum Laude, John and Abigail Adams Scholarship</p><br>
       <p style="width:90%;float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:100">Activities and Societies: UMass Cybersecurity Club, UMass Design Club, UMass Association for Computing Machinery</p><br>
     </div>
-    <div id="UMassClick" style="max-width:1400px;min-width:600px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 45px; margin-left:10px; margin-right:10px;background-color:#CCF0FF; margin-bottom:0px; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;" onclick="expandEducation()" onmouseover="shadow('UMassClick')" onmouseout="unshadow('UMassClick')">
+    <div id="UMassClick" style="max-width:1400px;min-width:600px;z-index: 0; text-align:left; display: inline-block;position:relative; width:90%; height: 45px; margin-left:10px; margin-right:10px;background-color:#CCF0FF; margin-bottom:0px; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;" onclick="expand('bachelors')" onmouseover="shadow('UMassClick')" onmouseout="unshadow('UMassClick')">
       <p style="width:50%; float:left; font-size:1.0em;margin-left:4px;color:#001C55;font-weight:600">Coursework</p>
-      <div id="caret"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+      <div id="caretbachelors"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
     </div>
     <div id="Courses" style="max-width:1400px;display: inline-block; z-index: 0; text-align:center; position:relative; width:90%; margin-left:10px; margin-right:10px;padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; margin-bottom:20px;">
-      <div class="course" style="display:none; z-index: 0; text-align:left; margin-bottom: 10px; position:relative; width:100%; background-color:#e4f7ff; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;">
-        <p style="font-size:0.9em;color:#001C55;font-weight:600">Computer Science / Math: <p style="font-size:0.9em;color:#001C55;font-weight:400">Calculus (I, II, III),
+      <div class="coursebachelors" style="display:none; z-index: 0; text-align:left; margin-bottom: 10px; position:relative; width:100%; background-color:#e4f7ff; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;">
+        <p style="font-size:0.9em;color:#001C55;font-weight:600">Computer Science / Math: <p style="font-size:0.9em;color:#001C55;font-weight:400">
+        Calculus (I, II, III),
         Physics (I, II),
         Problem Solving with Computers,
         Data Structures,
@@ -403,7 +424,7 @@ body {
         Scientific Computing, 
         Combinatorics and Graph Theory
         </div>
-        <div class="course" style="z-index: 0; text-align:left; display: none ;position:relative; width:100%; background-color:#e4f7ff; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;">
+        <div class="coursebachelors" style="z-index: 0; text-align:left; display: none ;position:relative; width:100%; background-color:#e4f7ff; padding-bottom:15px; padding-left: 20px; padding-right:20px; padding-top: 10px; cursor: pointer;">
           <p style="font-size:0.9em;color:#001C55;font-weight:600">Other: <p style="font-size:0.9em;color:#001C55;font-weight:400">
         European History,
         U.S. History,
@@ -414,6 +435,7 @@ body {
         Microeconomics,
         Environmental Science</p>
       </div>
+    </div>
   </div>
 
   <div id="Skills" style="width:100%; text-align:center; float:left; padding-top:75px;">
@@ -461,7 +483,7 @@ body {
       
       <div id="490A" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px; background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('490A')" onmouseout="unshadow('490A')" onclick="modal('490AModal')">
         <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
-        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS490A</p><br>
+        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">CS490A Project</p><br>
         <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Final project to perform sentiment analysis of financial tweets to predict change in stock price.</p><br>
         <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated on Dec 2020</p><br>
         <div style="float:right;position:absolute;bottom:10px;right:17px">
@@ -472,10 +494,10 @@ body {
       <div id="490AModal" class="modal">
         <div class="modal-content" style="height:535px; text-align:center; width:950px">
           <span class="close" id="490AModalClose">&times;</span>
-          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS490A</p>
+          <p style="font-size:1.4em;color:#001C55;font-weight:600">CS490A Project</p>
           <div style="margin-bottom:30px;float:left; width:50%; text-align: center; padding:10px; margin-top: 80px; background-color:#CCF0FF;">
             <img src="Images/490A.png" width="400px" style="margin-top:20px;border-radius:0px; border-style:solid; border-color:#001C55;">
-            <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom:20px;">Old Website view and layout.</p> 
+            <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom:20px;">Candlestick chart of AAPL stock.</p> 
           </div>
           <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:45px; padding-left:20px">
             <p style="float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
@@ -845,33 +867,6 @@ body {
             </div>
         </div>
       </div>
-
-      <div id="HackUmassVI" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('HackUmassVI')" onmouseout="unshadow('HackUmassVI')" onclick="modal('HackUmassVIModal')">
-        <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
-        <p style="float:left;font-size:1.4em;margin-left:4px;color:#001C55;font-weight:600">Hack UMass VI</p><br>
-        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400">Team Hackathon project for Hack UMass VI of a remote light switch device and application for UMass students.</p><br>
-        <p style="float:left;margin-top: 10px; font-size:1.0em;color:#808080;font-weight:400">Updated Oct 2018</p><br>
-        <div style="float:right;position:absolute;bottom:10px;right:17px">
-          <div class="tooltip"><img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" width="35px"/><span class="tooltiptext">Java</span></div>
-        </div>
-      </div>
-
-      <div id="HackUmassVIModal" class="modal">
-        <div class="modal-content" style="height:535px; text-align:center; width:950px">
-          <span class="close" id="HackUmassVIModalClose">&times;</span>
-          <p style="font-size:1.4em;color:#001C55;font-weight:600">Hack UMass VI</p>
-            <div style="float:left; width:50%; text-align: center; padding:10px; margin-top: 40px; background-color:#CCF0FF;">
-              <img src="Images/HackUmassVI.png" width="400px" style="margin-top:50px; border-radius:0px; border-style:solid; border-color:#001C55;display:inline-block">
-              <p style="margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: center; margin-bottom: 50px">Mock app background</p> 
-            </div>
-            <div style="float:right; width:50%; text-align:left; padding:10px; margin-top:10px;">
-              <p style="padding-left:20px;float:left;margin-top: 10px; font-size:0.9em;color:#001C55;font-weight:400; text-align: left">
-                Worked with a small team of computer science and computer engineering students to design a remote light switch and curtain opener with desktop application in Java to help make dorm life easier for UMass students. Led the development of the GUI and attempted to link the application over Bluetooth to a Raspberry Pi operating the motor.<br>
-              </p>
-            </div>
-        </div>
-      </div>
-
     
       <div id="Nacam" style="z-index: 0;text-align:left; display: inline-block;position:relative; width:515px; height: 215px; margin-left:8px; margin-right:8px;background-color:rgb(166,225,250);padding:20px;  margin-bottom: 20px; padding: 30px; cursor: pointer;" onmouseover="shadow('Nacam')" onmouseout="unshadow('Nacam')" onclick="modal('NacamModal')">
         <img src="icons8-repository-96.png" width="31px" style="float:left;padding:5px;">
@@ -991,9 +986,9 @@ body {
     div.style.boxShadow = "";
   }
 
-  function expandEducation(){
-    let div = document.getElementById("caret");
-    let elements = document.getElementsByClassName("course");
+  function expand(id){
+    let div = document.getElementById("caret"+id);
+    let elements = document.getElementsByClassName("course"+id);
     if(div.innerHTML === '<i class="fa fa-caret-down" aria-hidden="true"></i>'){
       div.innerHTML = '<i class="fa fa-caret-up" aria-hidden="true"></i>';
       for(var i=0; i<elements.length; i++) {
