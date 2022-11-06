@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="Console.png">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        color: #001C55;
+    }
+
+    body {
+        background-color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .navbar {
+        padding-bottom: 10px;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+
+    .main-nav {
+        list-style-type: none;
+        display: none;
+    }
+
+    .nav-links,
+    .logo {
+        text-decoration: none;
+        color: rgb(0, 28, 85, 1.0);
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        text-decoration: none;
+        font-size: 4.0vw;
+        font-weight: 500;
+        font-stretch: 130%;
+        line-height: normal;
+        display: inline-block;
+        padding: 38px
+    }
+
+    .nav-links:hover {
+        font-weight: 800;
+    }
+
+    .main-nav li {
+        text-align: center;
+        margin-top: -15px;
+    }
+
+    .logo {
+        display: inline-block;
+        padding: 17px 10px;
+        font-size: 22px;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        top: 30px;
+        right: 45px;
+        cursor: pointer;
+        color: #001C55;
+        font-size: 24px;
+    }
+
+    .active {
+        display: block;
+    }
+
+    #current {
+        display: block;
+        font-weight: 650;
+    }
+
+    .image {
+        width: 100%;
+        text-align: center;
+        margin-top: -50px;
+    }
+
+    .subimage p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bio {
+        width: 100%;
+        float: left;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    @media screen and (min-width: 1500px) {
+        .nav-links {
+            font-size: 0.95vw;
+        }
+        .image {
+            width: 40%;
+            float: left;
+            margin-top: 0px;
+        }
+        .bio {
+            width: 60%;
+            float: left;
+            padding-right: 120px;
+            padding-left: 40px;
+        }
+        .subimage {
+            float: right;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+        .image {
+            width: 40%;
+            float: left;
+            margin-top: 0px;
+        }
+        .bio {
+            width: 60%;
+            float: left;
+            padding-right: 120px;
+            padding-left: 40px;
+        }
+        .subimage {
+            float: right;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0;
+            height: 70px;
+            align-items: center;
+        }
+        .main-nav {
+            display: flex;
+            margin-right: 30px;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        .main-nav li {
+            margin: 0;
+        }
+        .nav-links {
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 17px 18px;
+            font-size: 1.0vw;
+        }
+        .logo {
+            margin-top: 0;
+        }
+        .navbar-toggle {
+            display: none;
+        }
+        .nav-links:hover {
+            background-color: rgb(166, 225, 250);
+        }
+        .navbar {
+            position: fixed;
+            right: 10px;
+            width: 95%;
+        }
+    }
+
+    h1 {
+        color: #001C55;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 85px;
+        background-color: #333333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.8em;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 2;
+        bottom: 100%;
+        left: 100%;
+        margin-left: -64px;
+        margin-bottom: 3px;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    .modal {
+        position: fixed;
+        /* Stay in place */
+        z-index: 3;
+        /* Sit on top */
+        padding-top: 20px;
+        /* Location of the box */
+        padding-bottom: 20px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        width: 80%;
+    }
+
+    .close {
+        color: #a6b8dd;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: -15px;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #001C55;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<head>
+    <title>Yefim Shneyderman | Movies & TV</title>
+</head>
+
+<body style="padding-left: 20px; padding-right: 20px;">
+    <div style="z-index: 1; position:fixed; background-color: #ffffff; width:100%; height:85px;">
+        <div style="margin-top: 10px; margin-left: 30px; margin-right: 25px;">
+            <nav class="navbar">
+                <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fa fa-bars"></i>
+        </span>
+                <a href="#" class="logo">Yefim Shneyderman<p style="font-size:0.7em;color:#335394;font-weight:600">Movies</p></a>
+                <ul class="main-nav" id="js-menu">
+                    <li>
+                        <a href="index.html" class="nav-links">Professional</a>
+                    </li>
+                    <li>
+                        <a href="movies.html" class="nav-links" id="current">Movies/TV</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="Movies" style="width:100%; text-align:center; float:left; padding-top:75px; margin-top:30px; margin-bottom:0px;min-width:600px">
+        <h1 style="font-size:2.3em; text-align: center">Favorite Movies / TV</h1><br>
+        <div style="display:inline-block; max-width:1400px;">
+            <p style="margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400; text-align: left"> As someone with experience in the industry and having seen many movies, when considering a movie or show for this list, I tend to consider the following: <b>cinematography, plot, writing, acting, budget, history, genre, uniqueness</b>. Generally a movie or tv show will need to do well in all categories to make the list, but in some cases I give special consideration for exemplary performance in certain categories. The list contains movies in several languages, but most are in English except where otherwise stated.
+            </p>
+            <br>
+            <p style="margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400; text-align: left"> In no particular order, the movies and tv shows that I felt were above a certain threshold to make them worthy of this list. <br><b>Movies [8-10 Stars]:</b>
+            <br>
+            <br>
+            <div>
+            <div style="text-align:left; float:left; width:50%; padding-right: 20px; padding-left:60px;">
+                <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+                    • Schindler's List<br>
+                    • The Green Mile<br>
+                    • Enemy at the Gates<br>
+                    • Das Boot<br>
+                    • Ivan Vasilievich Changes Profession (Russian: Иван Васильевич меняет профессию)<br>
+                    • Diamond Arm (Russian: Бриллиантовая рука)<br>
+                    • Kidnapping, Caucasian Style (Russian: Кавказская пленница)<br>
+                    • Ip Man (1)<br>
+                    • Inception<br>
+                    • Forrest Gump<br>
+                    • The Matrix (1)<br>
+                    • How to Steal a Million<br>
+                    • Hereditary<br>
+                    • One Flew Over the Cuckoo's Nest<br>
+                    • The Lord of the Rings: The Fellowship of the Ring<br>
+                    • The Lord of the Rings: The Two Towers<br>
+                    • The Lord of the Rings: The Return of the King<br>
+                    • The Hobbit: An Unexpected Journey<br>
+                    • The Hobbit: The Desolation of Smaug<br>
+                    • The Hobbit: The Battle of Five Armies<br>
+                    • Se7en<br>
+                    • The Intouchables (French: Les Intouchables)<br>
+                    • Aladdin (1992)<br>
+                    • Leon: The Professional<br>
+                    • The Truman Show<br>
+                    • The Princess Bride<br>
+                    • Avengers: Infinity War<br>
+                    • Avengers: Endgame<br>
+                    • Thor Ragnarok<br>
+                    • Pan's Labyrinth (Spanish: El laberinto del fauno)<br>
+                    • V for Vendetta<br>
+                    • Serial (Bad) Weddings (French: Qu'est-ce qu'on a fait au Bon Dieu?)<br>
+                    • Fight Club<br>
+                    • True Grit <br>
+                    • Snowpiercer <br>
+                    • The Godfather (1) <br>
+                    • Tenet<br>
+                    • Groundhog Day<br>
+                </div>
+            </div>
+            <div style="text-align:left; float:right; width:50%; padding-right: 60px; padding-left:20px;">
+                <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+                    • Guardian Angels (French: Les Anges Gardiens)<br>
+                    • Gladiator<br>
+                    • Law Abiding Citizen<br>
+                    • Parasite (Korean: 기생충)<br>
+                    • Constantine<br>
+                    • Project Gutenberg (Chinese: 無雙)<br>
+                    • WALL·E<br>
+                    • Contact<br>
+                    • Bestseller<br>
+                    • The Russians Are Coming, the Russians Are Coming<br>
+                    • Coco<br>
+                    • Inglorious Basterds<br>
+                    • Good Will Hunting<br>
+                    • Braveheart<br>
+                    • Lawrence of Arabia<br>
+                    • Some Like It Hot<br>
+                    • Life of Pi<br>
+                    • Namesake<br>
+                    • The Shawshank Redemption<br>
+                    • Get Out<br>
+                    • Lincoln Lawyer<br>
+                    • Knives Out <br>
+                    • Dunkirk<br>
+                    • Batman Begins<br>
+                    • The Dark Knight<br>
+                    • The Dark Knight Rises<br>
+                    • Children of Men<br>
+                    • Stand Up Guys<br>
+                    • The Good, the Bad and the Ugly<br>
+                    • District 9<br>
+                    • Interstellar<br>
+                    • The 100-Year-Old Man Who Climbed Out the Window and Disappeared<br>
+                    • Elysium<br>
+                    • Dune <br>
+                    • The Imitation Game<br>
+                    • 1917<br>
+                    • Train to Busan (Korean: 부산행)<br>
+                    • Ghostbusters (1)<br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="TV Shows" style="width:100%; text-align:center; float:left; padding-top:0px; margin-top:0px; margin-bottom:0px;min-width:600px">
+    <div style="display:inline-block; max-width:1400px;">
+        <p style="margin-top: 0px; font-size:1.0em;color:#ffffff;font-weight:400; text-align: left">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p style="margin-top: 0px; font-size:1.0em;color:#001C55;font-weight:400; text-align: left;"><b>TV Shows [8-10 Stars]:</b>
+        <div style="text-align:left; float:left; width:50%; padding-right: 20px; padding-left:60px;">
+            <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+                • Stranger Things <br>
+                • Money Heist (Spanish: La Casa de Papel)<br>
+                • The Expanse <br>
+                • Jack Ryan <br>
+                • Emily in Paris<br>
+                • Love Death + Robots<br>
+                • Avatar: The Last Airbender, Legend of Korra<br>
+                • The Office<br>
+            </div>
+        </div>
+        <div style="text-align:left; float:right; width:50%; padding-right: 60px; padding-left:20px;">
+            <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+                • Ivanhoe BBC Miniseries<br>
+                • Game of Thrones<br>
+                • Black Mirror <br>
+                • The Witcher <br>
+                • South Park <br>
+                • Altered Carbon (Season 1) <br>
+                • Rick and Morty<br>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="HM Movies" style="width:100%; text-align:center; float:left; padding-top:15px; margin-top:10px; margin-bottom:0px;min-width:600px">
+    <div style="display:inline-block; max-width:1400px;">
+        <p style="margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400; text-align: left"><b>Honorable mentions</b> - movies and tv shows that don't quite make the above list, but need recognition because they have some interesting elements that are worth a watch. Often these elements are related to doing a lot with a small budget or simply having a few iconic scenes that really stand out.
+            <br> 
+            <p style="margin-top: 10px; font-size:1.0em;color:#001C55;font-weight:400; text-align: left;"><b>Movies [7 Stars]:</b>
+                <div style="text-align:left; float:left; width:50%; padding-right: 20px; padding-left:60px;">
+                    <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+                        • Annihilation <br>
+                        • Don't Look Up<br>
+                        • Diggstown<br>
+                        • Star Wars: Rogue One<br>
+                    </div>
+                </div>
+                <div style="text-align:left; float:right; width:50%; padding-right: 60px; padding-left:20px;">
+                    <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+                        • Onward<br>
+                        • The Burbs<br>
+                        • The Hard Way<br>
+                        • Up<br>
+                    </div>
+                </div>
+        </div>
+</div>
+<div id="HM TV Shows" style="width:100%; text-align:center; float:left; padding-top:0px; margin-top:0px; margin-bottom:30px;min-width:600px">
+    <div style="display:inline-block; max-width:1400px;">
+        <p style="margin-top: 0px; font-size:1.0em;color:#ffffff;font-weight:400; text-align: left">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+    <p style="margin-top: 0px; font-size:1.0em;color:#001C55;font-weight:400; text-align: left;"><b> TV Shows [7 Stars]:</b>
+    <div style="text-align:left; float:left; width:50%; padding-right: 20px; padding-left:60px;">
+        <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+            • The Boys <br>
+        </div>
+    </div>
+    <div style="text-align:left; float:right; width:50%; padding-right: 60px; padding-left:20px;">
+        <div style="padding-left:30px; padding-top:5px;font-size:1.0em;color:#001C55;">
+            • Invincible <br>
+            • Community (Seasons 1-4)<br>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+<script>
+    let mainNav = document.getElementById("js-menu");
+    let navBarToggle = document.getElementById("js-navbar-toggle");
+
+    navBarToggle.addEventListener("click", function() {
+        mainNav.classList.toggle("active");
+    });
+</script>
+
+
+</html>
