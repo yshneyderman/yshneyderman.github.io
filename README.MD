@@ -2,5 +2,4 @@ A personal website template available to modify and use for your own. Based on S
 
 To Do:
 - Add cooking section
-- Remove all early smaller projects
 - Add new skills
